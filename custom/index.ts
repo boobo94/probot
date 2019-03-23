@@ -12,7 +12,8 @@ export const handler = SkillBuilders.custom()
         Intents.CancelAndStopIntentHandler,
 
         // custom
-        Intents.HelloWorldIntentHandler,
+        Intents.PersonalityIntentHandler,
+        Intents.JobSearchIntentHandler
     )
     .addErrorHandlers(
         Errors.Unknown,

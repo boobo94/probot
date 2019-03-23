@@ -8,5 +8,6 @@ export enum IntentTypes {
     No = "AMAZON.NoIntent",
     Pause = "AMAZON.PauseIntent",
 
-    Hello = "HelloIntent",
+    PersonalityTest = "personalityTestIntent",
+    JobSearch = "jobSearchIntent"
 }
