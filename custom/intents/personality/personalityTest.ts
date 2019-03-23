@@ -1,6 +1,6 @@
 import { RequestHandler } from "ask-sdk";
-import { IsIntent, GetRequestAttributes } from '../../lib/helpers';
-import { IntentTypes } from "../../lib/types";
+import { IsIntent, GetRequestAttributes, GetSessionAttributes } from '../../lib/helpers';
+import { IntentTypes, States } from "../../lib/types";
 
 export const PersonalityIntentHandler: RequestHandler = {
     canHandle(handlerInput) {
@@ -8,10 +8,13 @@ export const PersonalityIntentHandler: RequestHandler = {
     },
     handle(handlerInput) {
         const { t } = GetRequestAttributes(handlerInput)
-        const speechText = t("WELCOME_MSG")
+        const attributes = GetSessionAttributes(handlerInput)
+        attributes.state = States.Starting
 
+        const speechText = t("START_TEST_QUESTION")
         return handlerInput.responseBuilder
             .speak(speechText)
+            .reprompt(speechText)
             .withSimpleCard(t('SKILL_NAME'), speechText)
             .getResponse();
     }
