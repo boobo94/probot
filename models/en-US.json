@@ -31,15 +31,23 @@
           ]
         },
         {
-          "name": "personalityTest",
+          "name": "personalityTestIntent",
           "slots": [],
           "samples": [
             "test"
           ]
+        },
+        {
+          "name": "AMAZON.YesIntent",
+          "samples": []
+        },
+        {
+          "name": "AMAZON.NoIntent",
+          "samples": []
         }
       ],
       "types": []
     }
   },
-  "version": "1"
+  "version": "3"
 }
