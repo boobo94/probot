@@ -11,3 +11,10 @@ export enum IntentTypes {
     PersonalityTest = "personalityTestIntent",
     JobSearch = "jobSearchIntent"
 }
+
+export enum States {
+    Starting = "TEST_STARTS",
+    InProgess = "TEST_IN_PROGRESS",
+    Finished = "TEST_FINISHED",
+    JobSearch = "JOB_SEARCH",
+}
