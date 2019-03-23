@@ -12,6 +12,7 @@ export const HelpIntentHandler: RequestHandler = {
 
         return handlerInput.responseBuilder
             .speak(speechText)
+            .reprompt(speechText)
             .withSimpleCard(t('SKILL_NAME'), speechText)
             .getResponse();
     }
