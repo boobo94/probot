@@ -6,11 +6,11 @@
     "sourceMap": false,
     "target": "es6",
     "outDir": "./dist",
-    // "baseUrl": "./lib",
-    // "rootDir": "custom",
+    "rootDir": "./custom",
     "resolveJsonModule": true,
   },
   "exclude": [
-    "node_modules"
+    "node_modules",
+    "local"
   ]
 }
