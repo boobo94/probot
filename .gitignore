@@ -1,0 +1,9 @@
+# NPM dependencies
+
+node_modules
+package-lock.json
+
+# others
+
+ngrok
+dist

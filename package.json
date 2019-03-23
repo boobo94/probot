@@ -1,0 +1,45 @@
+{
+  "name": "alexa-skill-starter-pack-typescript",
+  "version": "1.0.0",
+  "description": "A sample to create AWS Lambda functions in TypeScript with Serverless.",
+  "main": "index.ts",
+  "scripts": {
+    "start": "nodemon",
+    "build": "npm run clean && gulp",
+    "tunnel": "ssh -R 80:localhost:3000 serveo.net",
+    "clean": "rimraf dist",
+    "deploy": "npm run build && ask deploy",
+    "sync:model": "ask api get-model -s amzn1.ask.skill.XXXXX -l en-US > models/en-US.json"
+  },
+  "keywords": [
+    "aws",
+    "lambda",
+    "tslint",
+    "typescript"
+  ],
+  "author": "Bogdan Alexandru Militaru",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/boobo94/alexa-skill-starter-pack-typescript.git"
+  },
+  "devDependencies": {
+    "@types/node": "^10.5.2",
+    "@types/express": "^4.16.0",
+    "@types/i18next": "^8.4.3",
+    "@types/i18next-sprintf-postprocessor": "^0.0.29",
+    "express": "^4.16.3",
+    "gulp": "^4.0.0",
+    "gulp-typescript": "^4.0.1",
+    "ts-node": "^5.0.1",
+    "typescript": "^2.9.2",
+    "nodemon": "^1.17.5"
+  },
+  "dependencies": {
+    "ask-sdk": "^2.5.1",
+    "ask-sdk-core": "^2.5.1",
+    "ask-sdk-model": "^1.13.0",
+    "i18next": "^15.0.7",
+    "i18next-sprintf-postprocessor": "^0.2.2"
+  }
+}
