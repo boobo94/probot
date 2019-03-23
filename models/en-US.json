@@ -1,8 +1,12 @@
 {
   "interactionModel": {
     "languageModel": {
-      "invocationName": "probot dev",
+      "invocationName": "probot",
       "intents": [
+        {
+          "name": "AMAZON.FallbackIntent",
+          "samples": []
+        },
         {
           "name": "AMAZON.CancelIntent",
           "samples": []
@@ -16,20 +20,26 @@
           "samples": []
         },
         {
-          "name": "HelloWorldIntent",
+          "name": "AMAZON.NavigateHomeIntent",
+          "samples": []
+        },
+        {
+          "name": "jobSearchIntent",
           "slots": [],
           "samples": [
-            "how are you",
-            "hi",
-            "say hi world",
-            "say hi",
-            "hello",
-            "say hello world",
-            "say hello"
+            "job search"
+          ]
+        },
+        {
+          "name": "personalityTest",
+          "slots": [],
+          "samples": [
+            "test"
           ]
         }
       ],
       "types": []
     }
-  }
+  },
+  "version": "1"
 }
