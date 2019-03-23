@@ -1,3 +1,4 @@
+import { States } from "./types";
 
 
 export interface RequestAttributes {
@@ -12,4 +13,16 @@ export interface RequestAttributes {
 
 }
 
-export interface SessionAttributes { }
+export interface SessionAttributes {
+    state: States
+    score: Score
+}
+
+export interface Score {
+    R: Number
+    I: Number
+    A: Number
+    S: Number
+    E: Number
+    C: Number
+}
