@@ -1,5 +1,5 @@
 import { HandlerInput } from "ask-sdk";
-import { RequestAttributes, SessionAttributes } from './interfaces';
+import { RequestAttributes, SessionAttributes, PersistentAttributes } from './interfaces';
 
 export function IsIntent(handlerInput: HandlerInput, ...intents: string[]): boolean {
     if (handlerInput.requestEnvelope.request.type === "IntentRequest") {
@@ -27,4 +27,8 @@ export function GetRequestAttributes(handlerInput: HandlerInput): RequestAttribu
 
 export function GetSessionAttributes(handlerInput: HandlerInput): SessionAttributes {
     return handlerInput.attributesManager.getSessionAttributes() as SessionAttributes;
+}
+
+export function GetPersistentAttributes(handlerInput: HandlerInput): Promise<PersistentAttributes> {
+    return handlerInput.attributesManager.getPersistentAttributes() as Promise<PersistentAttributes>;
 }
