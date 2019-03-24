@@ -44,10 +44,17 @@
         {
           "name": "AMAZON.NoIntent",
           "samples": []
+        },
+        {
+          "name": "checkMyPersonalityIntent",
+          "slots": [],
+          "samples": [
+            "check my personality"
+          ]
         }
       ],
       "types": []
     }
   },
-  "version": "3"
+  "version": "4"
 }
