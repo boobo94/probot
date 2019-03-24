@@ -1,9 +1,9 @@
-import { RequestHandler, HandlerInput } from "ask-sdk-core";
+import { RequestHandler } from "ask-sdk-core";
 import { IsIntent, GetSessionAttributes, GetRequestAttributes } from "../../lib/helpers";
 import { IntentTypes, States } from "../../lib/types";
 import tests from "./tests";
 import { SessionAttributes } from "../../lib/interfaces";
-import { StatementStructure } from "./interface";
+import { PersonalityTestResult, PersonalityType } from './interface';
 
 export const ValidateStatementHandler: RequestHandler = {
     canHandle(handlerInput) {
@@ -14,12 +14,21 @@ export const ValidateStatementHandler: RequestHandler = {
     handle(handlerInput) {
         const { t } = GetRequestAttributes(handlerInput);
         const attributes = GetSessionAttributes(handlerInput)
-
         const currentTest = tests[attributes.test.id]
-        const currentStatement = currentTest[++attributes.test.statementId]
+
+        // calculate the current statement
+        const currentStatement = currentTest[attributes.test.statementId]
         attributes.test.score[currentStatement.Type] += attributes.test.statementId + 1
 
-        const speechText = currentStatement.Statement
+        // if the last statement were asked, close the test
+        if (++attributes.test.statementId === currentTest.length) {
+            return FinishTestHandler.handle(handlerInput)
+        }
+
+        // prepare the next statement
+        const nextStatement = currentTest[attributes.test.statementId]
+
+        const speechText = nextStatement.Statement
         return handlerInput.responseBuilder
             .speak(speechText)
             .reprompt(speechText)
@@ -37,9 +46,14 @@ export const DenyStatementHandler: RequestHandler = {
     handle(handlerInput) {
         const { t } = GetRequestAttributes(handlerInput);
         const attributes = GetSessionAttributes(handlerInput)
-
         const currentTest = tests[attributes.test.id]
-        const currentStatement = currentTest[++attributes.test.statementId]
+
+        // if the last statement were asked, close the test
+        if (++attributes.test.statementId === currentTest.length) {
+            return FinishTestHandler.handle(handlerInput)
+        }
+
+        const currentStatement = currentTest[attributes.test.statementId]
 
         const speechText = currentStatement.Statement
         return handlerInput.responseBuilder
@@ -51,21 +65,21 @@ export const DenyStatementHandler: RequestHandler = {
 };
 
 export const FinishTestHandler: RequestHandler = {
-    canHandle(handlerInput) {
-        const { state, test } = GetSessionAttributes(handlerInput);
-
-        const currentTest = tests[test.id]
-
-        return state === States.InProgess && ((currentTest.length - 1) === test.statementId)
+    canHandle(_) {
+        return false
     },
     handle(handlerInput) {
         const { t } = GetRequestAttributes(handlerInput);
         const attributes = GetSessionAttributes(handlerInput)
         attributes.state = States.Finished
 
-        //todo: check the results
+        const results = getPersonalityResults(attributes)
+        const scoresString = getPersonalityScore(results, t)
+        const personalityDescription = getMyPersonalitiesDescription(results, t)
 
-        const speechText = t("TEST_ENDED")
+        // todo: save results as persisent attributes
+
+        const speechText = t("TEST_ENDED", scoresString, personalityDescription)
         return handlerInput.responseBuilder
             .speak(speechText)
             .reprompt(speechText)
@@ -73,3 +87,93 @@ export const FinishTestHandler: RequestHandler = {
             .getResponse();
     }
 };
+
+function getPersonalityResults(attributes: SessionAttributes): Array<PersonalityTestResult> {
+    const score = attributes.test.score
+
+    let personalityResults: PersonalityTestResult[] = []
+    for (const key in score)
+        personalityResults.push({
+            personality: key,
+            total: score[key]
+        })
+
+    // sort descendent by total score
+    personalityResults.sort((a, b) => {
+        if (a.total > b.total) return -1
+        return 1
+    })
+
+    // keep just the first 3 elements
+    return personalityResults.filter((value, index, arr) => {
+        return index < 3
+    })
+
+}
+
+const getPersonalityScore = (arr: Array<PersonalityTestResult>, t: any): string => {
+    let scoreResponse: string = ''
+    let personality: string = ''
+
+
+    arr.forEach((value, index) => {
+
+        if (index > 0) {
+            scoreResponse += ', '
+        }
+
+        switch (value.personality) {
+            case PersonalityType.R:
+                scoreResponse += t('REALISTIC_TITLE')
+                break;
+            case PersonalityType.I:
+                scoreResponse += t('INVESTIGATIVE_TITLE')
+                break;
+            case PersonalityType.A:
+                scoreResponse += t('ARTISTIC_TITLE')
+                break;
+            case PersonalityType.S:
+                scoreResponse += t('SOCIAL_TITLE')
+                break;
+            case PersonalityType.E:
+                scoreResponse += t('ENTERPRISING_TITLE')
+                break;
+            case PersonalityType.C:
+                scoreResponse += t('CONVENTIONAL_TITLE')
+                break;
+        }
+        personality += value.personality
+        scoreResponse += ` : ${value.total}`
+    })
+
+    return `${personality}, ${scoreResponse}`
+}
+
+const getMyPersonalitiesDescription = (arr: Array<PersonalityTestResult>, t: any): string => {
+    let response: string = ''
+
+    arr.forEach((value) => {
+        switch (value.personality) {
+            case PersonalityType.R:
+                response += `${t('REALISTIC_TITLE')}: ${t('REALISTIC_MSG')}`
+                break;
+            case PersonalityType.I:
+                response += `${t('INVESTIGATIVE_TITLE')}: ${t('INVESTIGATIVE_MSG')}`
+                break;
+            case PersonalityType.A:
+                response += `${t('ARTISTIC_TITLE')}: ${t('ARTISTIC_MSG')}`
+                break;
+            case PersonalityType.S:
+                response += `${t('SOCIAL_TITLE')}: ${t('SOCIAL_MSG')}`
+                break;
+            case PersonalityType.E:
+                response += `${t('ENTERPRISING_TITLE')}: ${t('ENTERPRISING_MSG')}`
+                break;
+            case PersonalityType.C:
+                response += `${t('CONVENTIONAL_TITLE')}: ${t('CONVENTIONAL_MSG')}`
+                break;
+        }
+    })
+
+    return response
+}

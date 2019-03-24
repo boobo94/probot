@@ -1,5 +1,3 @@
-
-
 export interface StatementStructure {
     Statement: string
     Type: PersonalityType
@@ -27,4 +25,9 @@ export interface Score {
     S: number
     E: number
     C: number
+}
+
+export interface PersonalityTestResult {
+    personality: string
+    total: number
 }
