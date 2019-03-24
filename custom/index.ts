@@ -1,9 +1,9 @@
-import { SkillBuilders } from 'ask-sdk';
+import { SkillBuilders, DynamoDbPersistenceAdapter } from 'ask-sdk';
 import * as Intents from './intents'
 import * as Errors from './errors';
 import * as Interceptors from './interceptors'
-
 import * as PersonalityIntents from './intents/personality'
+import { config } from './interceptors/config';
 
 export const handler = SkillBuilders.custom()
     .addRequestHandlers(
@@ -22,6 +22,7 @@ export const handler = SkillBuilders.custom()
         PersonalityIntents.PersonalityIntentHandler,
         PersonalityIntents.ValidateStatementHandler,
         PersonalityIntents.DenyStatementHandler,
+        PersonalityIntents.CheckMyPersonalityIntentHandler,
 
         // job search
         Intents.JobSearchIntentHandler
@@ -30,6 +31,13 @@ export const handler = SkillBuilders.custom()
         Errors.Unknown,
     )
     .addRequestInterceptors(
+        Interceptors.LoadPersistentAttributes,
         Interceptors.Localization,
+    ).addResponseInterceptors(
+        Interceptors.SavePersistentAttributes,
     )
+    .withPersistenceAdapter(new DynamoDbPersistenceAdapter({
+        createTable: true,
+        tableName: config.dynamoDbTableName,
+    }))
     .lambda();

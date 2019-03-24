@@ -1,5 +1,5 @@
 import { RequestHandler } from "ask-sdk-core";
-import { IsIntent, GetSessionAttributes, GetRequestAttributes } from "../../lib/helpers";
+import { IsIntent, GetSessionAttributes, GetRequestAttributes, GetPersistentAttributes } from "../../lib/helpers";
 import { IntentTypes, States } from "../../lib/types";
 import tests from "./tests";
 import { SessionAttributes } from "../../lib/interfaces";
@@ -68,16 +68,19 @@ export const FinishTestHandler: RequestHandler = {
     canHandle(_) {
         return false
     },
-    handle(handlerInput) {
+    async handle(handlerInput) {
         const { t } = GetRequestAttributes(handlerInput);
-        const attributes = GetSessionAttributes(handlerInput)
+        const attributes = GetSessionAttributes(handlerInput);
+        const persistentAttributes = await GetPersistentAttributes(handlerInput)
+
         attributes.state = States.Finished
 
         const results = getPersonalityResults(attributes)
         const scoresString = getPersonalityScore(results, t)
         const personalityDescription = getMyPersonalitiesDescription(results, t)
 
-        // todo: save results as persisent attributes
+        // save results as persisent attributes
+        persistentAttributes.personality = results
 
         const speechText = t("TEST_ENDED", scoresString, personalityDescription)
         return handlerInput.responseBuilder
@@ -111,7 +114,7 @@ function getPersonalityResults(attributes: SessionAttributes): Array<Personality
 
 }
 
-const getPersonalityScore = (arr: Array<PersonalityTestResult>, t: any): string => {
+export const getPersonalityScore = (arr: Array<PersonalityTestResult>, t: any): string => {
     let scoreResponse: string = ''
     let personality: string = ''
 
@@ -149,7 +152,7 @@ const getPersonalityScore = (arr: Array<PersonalityTestResult>, t: any): string 
     return `${personality}, ${scoreResponse}`
 }
 
-const getMyPersonalitiesDescription = (arr: Array<PersonalityTestResult>, t: any): string => {
+export const getMyPersonalitiesDescription = (arr: Array<PersonalityTestResult>, t: any): string => {
     let response: string = ''
 
     arr.forEach((value) => {
