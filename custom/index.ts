@@ -20,6 +20,8 @@ export const handler = SkillBuilders.custom()
         PersonalityIntents.StartTestHandler,
         PersonalityIntents.DenyTestHandler,
         PersonalityIntents.PersonalityIntentHandler,
+        PersonalityIntents.ValidateStatementHandler,
+        PersonalityIntents.DenyStatementHandler,
 
         // job search
         Intents.JobSearchIntentHandler

@@ -1,3 +1,4 @@
 export * from './personalityTest'
-export * from './StartTest'
-export * from './DenyTest'
+export * from './startTest'
+export * from './denyTest'
+export * from './testInProgress'

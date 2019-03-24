@@ -1,6 +1,7 @@
 import { RequestHandler } from "ask-sdk-core";
 import { IsIntent, GetSessionAttributes, GetRequestAttributes } from "../../lib/helpers";
 import { IntentTypes, States } from "../../lib/types";
+import tests from "./tests";
 
 export const StartTestHandler: RequestHandler = {
     canHandle(handlerInput) {
@@ -15,7 +16,24 @@ export const StartTestHandler: RequestHandler = {
         const attributes = GetSessionAttributes(handlerInput)
         attributes.state = States.InProgess
 
-        const speechText = t("TEST_STARTED")
+        // get a random test
+        attributes.test = {
+            id: getRandomTest(tests),
+            statementId: 0,
+            score: {
+                R: 0,
+                I: 0,
+                A: 0,
+                S: 0,
+                E: 0,
+                C: 0,
+            },
+        }
+
+        const currentTest = tests[attributes.test.id]
+        const currentStatement = currentTest[attributes.test.statementId]
+
+        const speechText = `${t("TEST_STARTED")} ${currentStatement.Statement}`
         return handlerInput.responseBuilder
             .speak(speechText)
             .reprompt(speechText)
@@ -24,3 +42,7 @@ export const StartTestHandler: RequestHandler = {
 
     }
 };
+
+function getRandomTest<T>(arr: T[]): number {
+    return Math.floor(Math.random() * arr.length)
+}
