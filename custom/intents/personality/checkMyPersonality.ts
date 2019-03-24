@@ -9,7 +9,6 @@ export const CheckMyPersonalityIntentHandler: RequestHandler = {
     },
     async handle(handlerInput) {
         const { t } = GetRequestAttributes(handlerInput);
-        const attributes = GetSessionAttributes(handlerInput);
         const persistentAttributes = await GetPersistentAttributes(handlerInput)
 
         const scoresString = getPersonalityScore(persistentAttributes.personality, t)
