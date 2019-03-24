@@ -1,3 +1,5 @@
+import { States } from "./types";
+import { TestSessionAttributes } from "../intents/personality/interface";
 
 
 export interface RequestAttributes {
@@ -12,4 +14,8 @@ export interface RequestAttributes {
 
 }
 
-export interface SessionAttributes { }
+export interface SessionAttributes {
+    state: States
+    test: TestSessionAttributes
+}
+

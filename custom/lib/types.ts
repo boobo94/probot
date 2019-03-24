@@ -8,5 +8,13 @@ export enum IntentTypes {
     No = "AMAZON.NoIntent",
     Pause = "AMAZON.PauseIntent",
 
-    Hello = "HelloIntent",
+    PersonalityTest = "personalityTestIntent",
+    JobSearch = "jobSearchIntent"
+}
+
+export enum States {
+    Starting = "TEST_STARTS",
+    InProgess = "TEST_IN_PROGRESS",
+    Finished = "TEST_FINISHED",
+    JobSearch = "JOB_SEARCH",
 }

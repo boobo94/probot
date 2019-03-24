@@ -1,5 +1,5 @@
 {
-  "name": "alexa-skill-starter-pack-typescript",
+  "name": "probot",
   "version": "1.0.0",
   "description": "A sample to create AWS Lambda functions in TypeScript with Serverless.",
   "main": "index.js",
@@ -17,10 +17,9 @@
     "typescript"
   ],
   "author": "Bogdan Alexandru Militaru",
-  "license": "MIT",
   "repository": {
     "type": "git",
-    "url": "https://github.com/boobo94/alexa-skill-starter-pack-typescript.git"
+    "url": "https://github.com/boobo94/probot"
   },
   "dependencies": {
     "ask-sdk": "^2.5.1",
