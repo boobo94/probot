@@ -3,6 +3,7 @@ import { IsIntent, GetSessionAttributes, GetRequestAttributes } from "../../lib/
 import { IntentTypes, States } from "../../lib/types";
 import tests from "./tests";
 import { SessionAttributes } from "../../lib/interfaces";
+import { PersonalityTestResult, PersonalityType } from './interface';
 
 export const ValidateStatementHandler: RequestHandler = {
     canHandle(handlerInput) {
@@ -72,10 +73,13 @@ export const FinishTestHandler: RequestHandler = {
         const attributes = GetSessionAttributes(handlerInput)
         attributes.state = States.Finished
 
-        //todo: check the results
-        GetPersonalityResults(attributes)
+        const results = getPersonalityResults(attributes)
+        const scoresString = getPersonalityScore(results, t)
+        const personalityDescription = getMyPersonalitiesDescription(results, t)
 
-        const speechText = t("TEST_ENDED")
+        // todo: save results as persisent attributes
+
+        const speechText = t("TEST_ENDED", scoresString, personalityDescription)
         return handlerInput.responseBuilder
             .speak(speechText)
             .reprompt(speechText)
@@ -84,20 +88,92 @@ export const FinishTestHandler: RequestHandler = {
     }
 };
 
-function GetPersonalityResults(attributes: SessionAttributes) {
+function getPersonalityResults(attributes: SessionAttributes): Array<PersonalityTestResult> {
     const score = attributes.test.score
 
+    let personalityResults: PersonalityTestResult[] = []
+    for (const key in score)
+        personalityResults.push({
+            personality: key,
+            total: score[key]
+        })
 
-    console.log(score)
+    // sort descendent by total score
+    personalityResults.sort((a, b) => {
+        if (a.total > b.total) return -1
+        return 1
+    })
+
+    // keep just the first 3 elements
+    return personalityResults.filter((value, index, arr) => {
+        return index < 3
+    })
+
+}
+
+const getPersonalityScore = (arr: Array<PersonalityTestResult>, t: any): string => {
+    let scoreResponse: string = ''
+    let personality: string = ''
 
 
-    for (const key in score) {
-        if (score.hasOwnProperty(key)) {
-            const element = score[key];
-            console.log(key + ' - ' + element)
+    arr.forEach((value, index) => {
+
+        if (index > 0) {
+            scoreResponse += ', '
         }
-    }
 
+        switch (value.personality) {
+            case PersonalityType.R:
+                scoreResponse += t('REALISTIC_TITLE')
+                break;
+            case PersonalityType.I:
+                scoreResponse += t('INVESTIGATIVE_TITLE')
+                break;
+            case PersonalityType.A:
+                scoreResponse += t('ARTISTIC_TITLE')
+                break;
+            case PersonalityType.S:
+                scoreResponse += t('SOCIAL_TITLE')
+                break;
+            case PersonalityType.E:
+                scoreResponse += t('ENTERPRISING_TITLE')
+                break;
+            case PersonalityType.C:
+                scoreResponse += t('CONVENTIONAL_TITLE')
+                break;
+        }
+        personality += value.personality
+        scoreResponse += ` : ${value.total}`
+    })
 
+    return `${personality}, ${scoreResponse}`
+}
 
+const getMyPersonalitiesDescription = (arr: Array<PersonalityTestResult>, t: any): string => {
+    let response: string = ''
+
+    arr.forEach((value) => {
+        switch (value.personality) {
+            case PersonalityType.R:
+                response += `${t('REALISTIC_TITLE')}: ${t('REALISTIC_MSG')}`
+                break;
+            case PersonalityType.I:
+                response += `${t('INVESTIGATIVE_TITLE')}: ${t('INVESTIGATIVE_MSG')}`
+                break;
+            case PersonalityType.A:
+                response += `${t('ARTISTIC_TITLE')}: ${t('ARTISTIC_MSG')}`
+                break;
+            case PersonalityType.S:
+                response += `${t('SOCIAL_TITLE')}: ${t('SOCIAL_MSG')}`
+                break;
+            case PersonalityType.E:
+                response += `${t('ENTERPRISING_TITLE')}: ${t('ENTERPRISING_MSG')}`
+                break;
+            case PersonalityType.C:
+                response += `${t('CONVENTIONAL_TITLE')}: ${t('CONVENTIONAL_MSG')}`
+                break;
+        }
+    })
+
+    return response
 }

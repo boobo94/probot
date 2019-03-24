@@ -26,3 +26,8 @@ export interface Score {
     E: number
     C: number
 }
+
+export interface PersonalityTestResult {
+    personality: string
+    total: number
+}
