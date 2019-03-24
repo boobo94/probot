@@ -2,6 +2,7 @@ import { RequestHandler } from "ask-sdk-core";
 import { IsIntent, GetSessionAttributes, GetRequestAttributes } from "../../lib/helpers";
 import { IntentTypes, States } from "../../lib/types";
 import tests from "./tests";
+import { SessionAttributes } from "../../lib/interfaces";
 
 export const ValidateStatementHandler: RequestHandler = {
     canHandle(handlerInput) {
@@ -12,12 +13,21 @@ export const ValidateStatementHandler: RequestHandler = {
     handle(handlerInput) {
         const { t } = GetRequestAttributes(handlerInput);
         const attributes = GetSessionAttributes(handlerInput)
-
         const currentTest = tests[attributes.test.id]
-        const currentStatement = currentTest[++attributes.test.statementId]
+
+        // calculate the current statement
+        const currentStatement = currentTest[attributes.test.statementId]
         attributes.test.score[currentStatement.Type] += attributes.test.statementId + 1
 
-        const speechText = currentStatement.Statement
+        // if the last statement were asked, close the test
+        if (++attributes.test.statementId === currentTest.length) {
+            return FinishTestHandler.handle(handlerInput)
+        }
+
+        // prepare the next statement
+        const nextStatement = currentTest[attributes.test.statementId]
+
+        const speechText = nextStatement.Statement
         return handlerInput.responseBuilder
             .speak(speechText)
             .reprompt(speechText)
@@ -35,9 +45,14 @@ export const DenyStatementHandler: RequestHandler = {
     handle(handlerInput) {
         const { t } = GetRequestAttributes(handlerInput);
         const attributes = GetSessionAttributes(handlerInput)
-
         const currentTest = tests[attributes.test.id]
-        const currentStatement = currentTest[++attributes.test.statementId]
+
+        // if the last statement were asked, close the test
+        if (++attributes.test.statementId === currentTest.length) {
+            return FinishTestHandler.handle(handlerInput)
+        }
+
+        const currentStatement = currentTest[attributes.test.statementId]
 
         const speechText = currentStatement.Statement
         return handlerInput.responseBuilder
@@ -49,12 +64,8 @@ export const DenyStatementHandler: RequestHandler = {
 };
 
 export const FinishTestHandler: RequestHandler = {
-    canHandle(handlerInput) {
-        const { state, test } = GetSessionAttributes(handlerInput);
-
-        const currentTest = tests[test.id]
-
-        return state === States.InProgess && ((currentTest.length - 1) === test.statementId)
+    canHandle(_) {
+        return false
     },
     handle(handlerInput) {
         const { t } = GetRequestAttributes(handlerInput);
@@ -62,6 +73,7 @@ export const FinishTestHandler: RequestHandler = {
         attributes.state = States.Finished
 
         //todo: check the results
+        GetPersonalityResults(attributes)
 
         const speechText = t("TEST_ENDED")
         return handlerInput.responseBuilder
@@ -71,3 +83,21 @@ export const FinishTestHandler: RequestHandler = {
             .getResponse();
     }
 };
+
+function GetPersonalityResults(attributes: SessionAttributes) {
+    const score = attributes.test.score
+
+
+    console.log(score)
+
+
+    for (const key in score) {
+        if (score.hasOwnProperty(key)) {
+            const element = score[key];
+            console.log(key + ' - ' + element)
+        }
+    }
+
+
+
+}
