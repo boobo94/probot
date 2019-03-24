@@ -1,5 +1,3 @@
-
-
 export interface StatementStructure {
     Statement: string
     Type: PersonalityType

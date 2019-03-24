@@ -1,7 +1,5 @@
 import { States } from "./types";
 import { TestSessionAttributes } from "../intents/personality/interface";
-
-
 export interface RequestAttributes {
     /**
      * Searches for the translation of the given key

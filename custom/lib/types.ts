@@ -1,4 +1,3 @@
-
 export enum IntentTypes {
     Help = "AMAZON.HelpIntent",
     Stop = "AMAZON.StopIntent",

@@ -1,9 +1,7 @@
-import { RequestHandler, HandlerInput } from "ask-sdk-core";
+import { RequestHandler } from "ask-sdk-core";
 import { IsIntent, GetSessionAttributes, GetRequestAttributes } from "../../lib/helpers";
 import { IntentTypes, States } from "../../lib/types";
 import tests from "./tests";
-import { SessionAttributes } from "../../lib/interfaces";
-import { StatementStructure } from "./interface";
 
 export const ValidateStatementHandler: RequestHandler = {
     canHandle(handlerInput) {
