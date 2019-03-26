@@ -12,7 +12,7 @@ export const locales = {
             // test intent
             "START_TEST_QUESTION": "Do you want to start the test?",
             "TEST_STARTED": "The test started. For the next questions you simply need to answer with 'Yes' or 'No'.",
-            "TEST_ENDED": "The test ended. Your personality is %s. %s",
+            "TEST_ENDED": "The test ended. Your personality is %s. %s. Thank you for your time!",
 
             // personalities
             "REALISTIC_TITLE": "Realistic",
