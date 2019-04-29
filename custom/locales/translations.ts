@@ -14,6 +14,10 @@ export const locales = {
             "TEST_STARTED": "The test started. For the next questions you simply need to answer with 'Yes' or 'No'.",
             "TEST_ENDED": "The test ended. Your personality is %s. %s. Thank you for your time!",
 
+            // check my personality
+            "CHECK_PERSONALITY": "Your personality is %s. %s.",
+            "PERSONALITY_UNAVAILABLE": "Sorry I couldn't find any results. Do you want to start the test ?",
+
             // personalities
             "REALISTIC_TITLE": "Realistic",
             "INVESTIGATIVE_TITLE": "Investigative",

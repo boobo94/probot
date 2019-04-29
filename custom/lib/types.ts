@@ -16,4 +16,5 @@ export enum States {
     InProgess = "TEST_IN_PROGRESS",
     Finished = "TEST_FINISHED",
     JobSearch = "JOB_SEARCH",
+    CheckPersonality = "CHECK_PERSONALITY",
 }

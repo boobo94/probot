@@ -3,6 +3,7 @@ import * as Intents from './intents'
 import * as Errors from './errors';
 import * as Interceptors from './interceptors'
 import * as PersonalityIntents from './intents/personality'
+import * as CheckPersonalityIntents from './intents/checkPersonality'
 import { config } from './interceptors/config';
 
 export const handler = SkillBuilders.custom()
@@ -20,7 +21,11 @@ export const handler = SkillBuilders.custom()
         PersonalityIntents.PersonalityIntentHandler,
         PersonalityIntents.ValidateStatementHandler,
         PersonalityIntents.DenyStatementHandler,
-        PersonalityIntents.CheckMyPersonalityIntentHandler,
+
+        // check personality
+        CheckPersonalityIntents.CheckMyPersonalityIntentHandler,
+        CheckPersonalityIntents.AllowStartTestIntentHandler,
+        CheckPersonalityIntents.DenyStartTestIntentHandler,
 
         // job search
         Intents.JobSearchIntentHandler
