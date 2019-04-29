@@ -26,6 +26,7 @@
     "ask-sdk-core": "^2.5.1",
     "ask-sdk-model": "^1.13.0",
     "i18next": "^15.0.7",
-    "i18next-sprintf-postprocessor": "^0.2.2"
+    "i18next-sprintf-postprocessor": "^0.2.2",
+    "axios": "^0.18.0"
   }
 }
