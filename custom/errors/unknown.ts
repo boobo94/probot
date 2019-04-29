@@ -6,6 +6,7 @@ export const Unknown: Alexa.ErrorHandler = {
         return true;
     },
     handle(handlerInput, error) {
+        console.log(error)
         console.log(`Error handled: ${error.message}`);
 
         const { t } = GetRequestAttributes(handlerInput)

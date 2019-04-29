@@ -9,10 +9,10 @@ export const CheckMyPersonalityIntentHandler: RequestHandler = {
     },
     async handle(handlerInput) {
         const { t } = GetRequestAttributes(handlerInput);
-        const persistentAttributes = await GetPersistentAttributes(handlerInput)
+        const { personality } = await GetPersistentAttributes(handlerInput)
 
-        const scoresString = getPersonalityScore(persistentAttributes.personality, t)
-        const personalityDescription = getMyPersonalitiesDescription(persistentAttributes.personality, t)
+        const scoresString = getPersonalityScore(personality, t)
+        const personalityDescription = getMyPersonalitiesDescription(personality, t)
 
         const speechText = t("TEST_ENDED", scoresString, personalityDescription)
         return handlerInput.responseBuilder

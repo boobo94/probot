@@ -13,7 +13,6 @@ export enum IntentTypes {
 }
 
 export enum States {
-    Starting = "TEST_STARTS",
     InProgess = "TEST_IN_PROGRESS",
     Finished = "TEST_FINISHED",
     JobSearch = "JOB_SEARCH",
