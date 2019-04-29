@@ -17,8 +17,6 @@ export const handler = SkillBuilders.custom()
         // custom intents
 
         // personality
-        PersonalityIntents.StartTestHandler,
-        PersonalityIntents.DenyTestHandler,
         PersonalityIntents.PersonalityIntentHandler,
         PersonalityIntents.ValidateStatementHandler,
         PersonalityIntents.DenyStatementHandler,
