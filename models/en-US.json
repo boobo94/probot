@@ -51,10 +51,18 @@
           "samples": [
             "check my personality"
           ]
+        },
+        {
+          "name": "repeatQuestionTestIntent",
+          "slots": [],
+          "samples": [
+            "repeat the question",
+            "repeat"
+          ]
         }
       ],
       "types": []
     }
   },
-  "version": "4"
+  "version": "5"
 }
