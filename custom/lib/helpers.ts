@@ -1,5 +1,6 @@
 import { HandlerInput } from "ask-sdk";
 import { RequestAttributes, SessionAttributes, PersistentAttributes } from './interfaces';
+import { Errors } from "aws-sdk/clients/s3";
 
 export function IsIntent(handlerInput: HandlerInput, ...intents: string[]): boolean {
     if (handlerInput.requestEnvelope.request.type === "IntentRequest") {
@@ -31,4 +32,10 @@ export function GetSessionAttributes(handlerInput: HandlerInput): SessionAttribu
 
 export function GetPersistentAttributes(handlerInput: HandlerInput): Promise<PersistentAttributes> {
     return handlerInput.attributesManager.getPersistentAttributes() as Promise<PersistentAttributes>;
+}
+
+export function CreateError(message: string, name: string): Error {
+    let error = new Error(message)
+    error.name = name
+    return error
 }

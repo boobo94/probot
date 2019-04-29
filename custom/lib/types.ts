@@ -19,3 +19,7 @@ export enum States {
     JobSearch = "JOB_SEARCH",
     CheckPersonality = "CHECK_PERSONALITY",
 }
+
+export enum Errors {
+    FindingJobs = 'FINDING_JOBS_ERROR',
+}

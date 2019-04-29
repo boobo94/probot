@@ -32,6 +32,7 @@ export const handler = SkillBuilders.custom()
         Intents.JobSearchIntentHandler
     )
     .addErrorHandlers(
+        Errors.ErrorFindingJobs,
         Errors.Unknown,
     )
     .addRequestInterceptors(
