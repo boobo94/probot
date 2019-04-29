@@ -9,7 +9,8 @@ export enum IntentTypes {
 
     PersonalityTest = "personalityTestIntent",
     CheckMyPersonality = "checkMyPersonalityIntent",
-    JobSearch = "jobSearchIntent"
+    JobSearch = "jobSearchIntent",
+    RepeatQuestion = "repeatQuestionTestIntent",
 }
 
 export enum States {

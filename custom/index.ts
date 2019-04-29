@@ -21,6 +21,7 @@ export const handler = SkillBuilders.custom()
         PersonalityIntents.PersonalityIntentHandler,
         PersonalityIntents.ValidateStatementHandler,
         PersonalityIntents.DenyStatementHandler,
+        PersonalityIntents.RepeatQuestionIntentHandler,
 
         // check personality
         CheckPersonalityIntents.CheckMyPersonalityIntentHandler,

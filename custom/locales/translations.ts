@@ -2,7 +2,7 @@ export const locales = {
     'en-US': {
         translation: {
             "SKILL_NAME": "Hello world",
-            "WELCOME_MSG": "Welcome to the Probot. Probot helps you to discover your personality by starting the test in any moment.",
+            "WELCOME_MSG": "Welcome to the Probot. You can start the test, check your personality results or find a job.",
             "GOODBYE_MSG": "Goodbye!",
             "HELLO_MSG": "If you want to start the test, simply ask `start the test`. In any moment yout can check your personality.",
             "HELP_MSG": "You can say hello to me!",
