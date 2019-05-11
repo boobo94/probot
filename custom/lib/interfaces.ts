@@ -15,11 +15,9 @@ export interface SessionAttributes {
     state: States
     test: TestSessionAttributes
     firstTimeUser: boolean;
-    job: {
-        visitedIDs: string[];
-        position?: string;
-        location?: string;
-    }
+    visitedIDs: string[];
+    position?: string;
+    location?: string;
 
 }
 
