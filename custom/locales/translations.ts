@@ -33,9 +33,12 @@ export const locales = {
 
             // job search
             "SEARCH_JOBS_QUESTION": "Do you want to search for jobs?",
+            "JOB_DESCRIPTION": "Your job is %s",
+            "INTERESTED_JOB": "Are you interested for this job?",
 
             // errors
             "ERROR_FINDING_JOBS": "Sorry but I couldn't connect to find a job, please try again.",
+            "ERROR_NO_MORE_JOBS": "Sorry but I don't have any new job. You can search again.",
             "ERROR_MSG": "Sorry, I can't understand the command. Please say again.",
             "ERROR_UNEXPECTED_MSG": "Sorry, an unexpected error has occured. Please try again later.",
 
