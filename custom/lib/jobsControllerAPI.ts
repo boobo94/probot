@@ -42,11 +42,16 @@ const getJob = async (jobId: string): Promise<JobType> => {
     try {
         const response = await instance.get(`/positions/${jobId}.json`);
 
-        return response.data;
+        return sanitizeJob(response.data);
     }
     catch (err) {
         throw err;
     }
+}
+
+export function sanitizeJob(job: JobType): JobType {
+    job.description = job.description.replace(/<\/?[^>]+(>|$)/g, "")
+    return job
 }
 
 export const jobsControllerAPI = {
