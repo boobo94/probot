@@ -10,7 +10,7 @@ export const ErrorNoMoreJobs: Alexa.ErrorHandler = {
         console.log(`Error handled: ${error.message}`);
 
         const { t } = GetRequestAttributes(handlerInput);
-        const speechOutput = t('ERROR_FINDING_JOBS');
+        const speechOutput = t('ERROR_NO_MORE_JOBS');
 
         return handlerInput.responseBuilder
             .speak(speechOutput)

@@ -35,7 +35,9 @@
             "runtime": "nodejs8.10"
           }
         ],
-        "manifest": {},
+        "manifest": {
+          "eTag": "3f21b96e7202a698f6c71083c1c635c3"
+        },
         "interactionModel": {
           "en-US": {
             "eTag": "dbbe06f592c02169462edfa02dfa2193"

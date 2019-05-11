@@ -14,7 +14,6 @@ export const ErrorFindingJobs: Alexa.ErrorHandler = {
 
         return handlerInput.responseBuilder
             .speak(speechOutput)
-            .withShouldEndSession(true)
             .getResponse();
 
     },
