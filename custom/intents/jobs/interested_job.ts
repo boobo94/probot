@@ -16,8 +16,6 @@ export const InterestedJobIntentHandler: RequestHandler = {
 
         const visited = sessionAttributes.visitedIDs
 
-        console.log(visited)
-
         const interestingJobId = visited[visited.length - 1]
         const interestingJob = await jobsControllerAPI.getJob(interestingJobId)
         const cardBody = `${t('COMPANY')}: ${interestingJob.company} \n\n ${t('LOCATION')}: ${interestingJob.location} \n\n ${t('URL')}: ${interestingJob.url}`

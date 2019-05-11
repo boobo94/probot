@@ -25,9 +25,23 @@
         },
         {
           "name": "jobSearchIntent",
-          "slots": [],
+          "slots": [
+            {
+              "name": "position",
+              "type": "AMAZON.ProfessionalType"
+            },
+            {
+              "name": "location",
+              "type": "AMAZON.City"
+            }
+          ],
           "samples": [
-            "job search"
+            "I want to be {position}",
+            "I want a {position} job",
+            "I look for a job in {location}",
+            "{location}",
+            "{position}",
+            "search a {position} job in {location}"
           ]
         },
         {
@@ -64,5 +78,5 @@
       "types": []
     }
   },
-  "version": "5"
+  "version": "8"
 }
