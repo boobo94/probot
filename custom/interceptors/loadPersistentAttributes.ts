@@ -2,7 +2,6 @@ import { RequestInterceptor } from "ask-sdk-core";
 import { GetPersistentAttributes, GetSessionAttributes } from "../lib/helpers";
 import { PersistentAttributes } from '../lib/interfaces';
 import { config } from "./config";
-import { PersonalityTestResult } from '../intents/personality/interface';
 
 export const LoadPersistentAttributes: RequestInterceptor = {
     async process(handlerInput) {

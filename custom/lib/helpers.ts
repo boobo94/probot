@@ -1,6 +1,5 @@
 import { HandlerInput } from "ask-sdk";
 import { RequestAttributes, SessionAttributes, PersistentAttributes } from './interfaces';
-import { Errors } from "aws-sdk/clients/s3";
 
 export function IsIntent(handlerInput: HandlerInput, ...intents: string[]): boolean {
     if (handlerInput.requestEnvelope.request.type === "IntentRequest") {
