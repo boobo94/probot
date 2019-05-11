@@ -22,10 +22,11 @@ export const InterestedJobIntentHandler: RequestHandler = {
 
         // todo: send the job via email
 
-        let speechText: string
+        let speechText = t('MARK_JOB_AS_SENT')
+
         try {
             const job = await GetJob(handlerInput)
-            speechText = t('JOB_DESCRIPTION', job.title)
+            speechText += t('JOB_DESCRIPTION', job.title, job.company, job.description)
         } catch (err) {
             throw CreateError(err, Errors.FindingJobs)
         }

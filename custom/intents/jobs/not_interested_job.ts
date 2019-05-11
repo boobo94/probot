@@ -15,7 +15,7 @@ export const NotInterestedJobIntentHandler: RequestHandler = {
         let speechText: string
         try {
             const job = await GetJob(handlerInput)
-            speechText = t('JOB_DESCRIPTION', job.title)
+            speechText = t('JOB_DESCRIPTION', job.title, job.company, job.description)
         } catch (err) {
             throw CreateError(err, Errors.FindingJobs)
         }

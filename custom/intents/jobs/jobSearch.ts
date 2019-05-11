@@ -14,7 +14,6 @@ export const JobSearchIntentHandler: RequestHandler = {
         try {
             let sessionAttributes = GetSessionAttributes(handlerInput)
             sessionAttributes.state = States.JobSearch
-
             sessionAttributes.visitedIDs = []
 
             // get the position and location
@@ -25,7 +24,7 @@ export const JobSearchIntentHandler: RequestHandler = {
             // pick up a new job
             const job = await GetJob(handlerInput)
 
-            speechText = t('JOB_DESCRIPTION', job.title)
+            speechText = t('JOB_DESCRIPTION', job.title, job.company, job.description)
 
         } catch (err) {
             throw CreateError(err, Errors.FindingJobs)
