@@ -14,6 +14,7 @@ export const ErrorNoMoreJobs: Alexa.ErrorHandler = {
 
         return handlerInput.responseBuilder
             .speak(speechOutput)
+            .reprompt(speechOutput)
             .getResponse();
 
     },
