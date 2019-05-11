@@ -2,8 +2,7 @@
 export interface Config {
     version: string;
     dynamoDbTableName: string;
-    IndeedBaseURL: string;
-    IndeedPublisherID: string;
+    jobsBaseURL: string;
 }
 
 export enum EnvironmentTypes {
@@ -19,15 +18,13 @@ function Config(): Config {
                 return {
                     version: "0.11",
                     dynamoDbTableName: "Probot-Alexa-Skill",
-                    IndeedBaseURL: 'https://api.indeed.com/ads/apisearch',
-                    IndeedPublisherID: "123412341234123",
+                    jobsBaseURL: 'https://jobs.github.com/positions.json',
                 };
             default:
                 return {
                     version: "0.11",
                     dynamoDbTableName: "Probot-Alexa-Skill-Dev",
-                    IndeedBaseURL: 'https://api.indeed.com/ads/apisearch',
-                    IndeedPublisherID: "123412341234123",
+                    jobsBaseURL: 'https://jobs.github.com/positions.json',
                 };
         }
     }
