@@ -17,26 +17,24 @@ export const InterestedJobIntentHandler: RequestHandler = {
         const visited = sessionAttributes.visitedIDs
 
         console.log(visited)
+
         const interestingJobId = visited[visited.length - 1]
         const interestingJob = await jobsControllerAPI.getJob(interestingJobId)
-
-        // todo: send the job via email
-
+        const cardBody = `${t('COMPANY')}: ${interestingJob.company} \n\n ${t('LOCATION')}: ${interestingJob.location} \n\n ${t('URL')}: ${interestingJob.url}`
         let speechText = t('MARK_JOB_AS_SENT')
 
         try {
             const job = await GetJob(handlerInput)
-            speechText += t('JOB_DESCRIPTION', job.title, job.company, job.description)
+            speechText += t('JOB_DESCRIPTION', job.title, job.company, job.location, job.description)
         } catch (err) {
             throw CreateError(err, Errors.FindingJobs)
         }
 
         const question = t('INTERESTED_JOB')
-
         return handlerInput.responseBuilder
             .speak(`${speechText} ${question}`)
             .reprompt(question)
-            .withSimpleCard(t('SKILL_NAME'), speechText)
+            .withStandardCard(interestingJob.title, cardBody, interestingJob.company_logo)
             .getResponse();
     }
 };
