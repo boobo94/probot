@@ -7,7 +7,7 @@ import { CreateError, GetSessionAttributes } from "../../lib/helpers";
 export async function GetJob(handlerInput: HandlerInput): Promise<JobType> {
     let sessionAttributes = GetSessionAttributes(handlerInput)
 
-    const jobs = await jobsControllerAPI.search(sessionAttributes.job.position, sessionAttributes.job.location);
+    const jobs = await jobsControllerAPI.search(sessionAttributes.position, sessionAttributes.location);
 
     if (!jobs.length) {
         throw CreateError('', Errors.FindingJobs)
@@ -15,7 +15,7 @@ export async function GetJob(handlerInput: HandlerInput): Promise<JobType> {
 
     // filter to get all jobs not listen
     jobs.filter((value) => {
-        return sessionAttributes.job.visitedIDs.indexOf(value.id) !== -1
+        return sessionAttributes.visitedIDs.indexOf(value.id) !== -1
     })
 
     // check if there are new jobs not listen
@@ -27,7 +27,7 @@ export async function GetJob(handlerInput: HandlerInput): Promise<JobType> {
     const job = jobs[Math.ceil(Math.random() * jobs.length)]
 
     // mark the job as listen to
-    sessionAttributes.job.visitedIDs.push(job.id)
+    sessionAttributes.visitedIDs.push(job.id)
 
     return job
 }

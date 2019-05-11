@@ -33,8 +33,8 @@ export const locales = {
 
             // job search
             "SEARCH_JOBS_QUESTION": "Do you want to search for jobs?",
-            "JOB_DESCRIPTION": "Your job is %s",
-            "INTERESTED_JOB": "Are you interested for this job?",
+            "JOB_DESCRIPTION": "I found a position as %s.",
+            "INTERESTED_JOB": "Are you interested?",
 
             // errors
             "ERROR_FINDING_JOBS": "Sorry but I couldn't connect to find a job, please try again.",

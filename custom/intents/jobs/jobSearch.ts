@@ -1,34 +1,41 @@
 import { RequestHandler } from "ask-sdk";
-import { IsIntent, GetRequestAttributes, CreateError } from '../../lib/helpers';
-import { IntentTypes, Errors } from "../../lib/types";
-import indeedControllerAPI from "../../lib/jobsControllerAPI";
+import { IsIntent, GetRequestAttributes, CreateError, GetSessionAttributes, GetSlotValues } from '../../lib/helpers';
+import { IntentTypes, Errors, States, SlotTypes } from "../../lib/types";
+import { GetJob } from "./helpers";
 
 export const JobSearchIntentHandler: RequestHandler = {
     canHandle(handlerInput) {
         return IsIntent(handlerInput, IntentTypes.JobSearch)
     },
-    async   handle(handlerInput) {
+    async handle(handlerInput) {
         const { t } = GetRequestAttributes(handlerInput)
-        const speechText = t("SEARCH_JOBS_QUESTION")
+        let speechText: string
 
         try {
-            //todo: get the job name and location dynamic
-            const jobs = await indeedControllerAPI.search('web developer', '');
+            let sessionAttributes = GetSessionAttributes(handlerInput)
+            sessionAttributes.state = States.JobSearch
 
-            if (!jobs.length) {
-                throw CreateError('', Errors.FindingJobs)
-            }
+            sessionAttributes.visitedIDs = []
 
-            const getOne = jobs[Math.ceil(Math.random() * jobs.length)]
+            // get the position and location
+            const slots = GetSlotValues(handlerInput)
+            sessionAttributes.position = slots[SlotTypes.Position].value;
+            sessionAttributes.location = slots[SlotTypes.Location].value;
 
-            console.log(jobs)
+            // pick up a new job
+            const job = await GetJob(handlerInput)
+
+            speechText = t('JOB_DESCRIPTION', job.title)
+
         } catch (err) {
             throw CreateError(err, Errors.FindingJobs)
         }
 
+        const question = t('INTERESTED_JOB')
+
         return handlerInput.responseBuilder
-            .speak(speechText)
-            .reprompt(speechText)
+            .speak(`${speechText} ${question}`)
+            .reprompt(question)
             .withSimpleCard(t('SKILL_NAME'), speechText)
             .getResponse();
     }
