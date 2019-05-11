@@ -1,22 +1,20 @@
 import { HandlerInput } from "ask-sdk";
 import { Errors } from "../../lib/types";
-import { jobsControllerAPI, JobType } from "../../lib/jobsControllerAPI";
+import { jobsControllerAPI, JobType, sanitizeJob } from "../../lib/jobsControllerAPI";
 import { CreateError, GetSessionAttributes } from "../../lib/helpers";
 
 
 export async function GetJob(handlerInput: HandlerInput): Promise<JobType> {
     let sessionAttributes = GetSessionAttributes(handlerInput)
 
-    const jobs = await jobsControllerAPI.search(sessionAttributes.position, sessionAttributes.location);
+    let jobs = await jobsControllerAPI.search(sessionAttributes.position, sessionAttributes.location);
 
     if (!jobs.length) {
         throw CreateError('', Errors.FindingJobs)
     }
 
     // filter to get all jobs not listen
-    jobs.filter((value) => {
-        return sessionAttributes.visitedIDs.indexOf(value.id) !== -1
-    })
+    jobs = jobs.filter((job) => sessionAttributes.visitedIDs.indexOf(job.id) === -1)
 
     // check if there are new jobs not listen
     if (!jobs.length) {
@@ -24,13 +22,10 @@ export async function GetJob(handlerInput: HandlerInput): Promise<JobType> {
     }
 
     // pick up a new job
-    const job = jobs[Math.ceil(Math.random() * jobs.length)]
-
-    // remove html tags
-    job.description = job.description.replace(/<\/?[^>]+(>|$)/g, "")
+    const job = jobs[Math.ceil(Math.random() * jobs.length) - 1]
 
     // mark the job as listen to
     sessionAttributes.visitedIDs.push(job.id)
 
-    return job
+    return sanitizeJob(job)
 }
