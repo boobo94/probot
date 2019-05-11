@@ -36,9 +36,12 @@
             }
           ],
           "samples": [
-            "I want to be {position}",
-            "I want a {position} job",
-            "I look for a job in {location}",
+            "search a job as {position} in {location}",
+            "want a job in {location} as {position}",
+            "want a position as {position} in {location}",
+            "want to be {position}",
+            "want a {position} job",
+            "look for a job in {location}",
             "{location}",
             "{position}",
             "search a {position} job in {location}"
@@ -78,5 +81,5 @@
       "types": []
     }
   },
-  "version": "8"
+  "version": "11"
 }
