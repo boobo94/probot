@@ -22,11 +22,11 @@
     "url": "https://github.com/boobo94/probot"
   },
   "dependencies": {
-    "ask-sdk": "^2.5.1",
-    "ask-sdk-core": "^2.5.1",
-    "ask-sdk-model": "^1.13.0",
-    "i18next": "^15.0.7",
-    "i18next-sprintf-postprocessor": "^0.2.2",
-    "axios": "^0.18.0"
+    "ask-sdk": "^2.5.2",
+    "ask-sdk-core": "^2.5.2",
+    "ask-sdk-model": "^1.15.1",
+    "axios": "^0.18.0",
+    "i18next": "^15.1.0",
+    "i18next-sprintf-postprocessor": "^0.2.2"
   }
 }
