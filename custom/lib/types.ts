@@ -1,3 +1,5 @@
+import { Slot, SlotConfirmationStatus } from "ask-sdk-model";
+
 export enum IntentTypes {
     Help = "AMAZON.HelpIntent",
     Stop = "AMAZON.StopIntent",
@@ -13,6 +15,12 @@ export enum IntentTypes {
     RepeatQuestion = "repeatQuestionTestIntent",
 }
 
+export enum RequestTypes {
+    Launch = "LaunchRequest",
+    Intent = "IntentRequest",
+    SessionEnded = "SessionEndedRequest",
+}
+
 export enum States {
     InProgess = "TEST_IN_PROGRESS",
     Finished = "TEST_FINISHED",
@@ -23,4 +31,21 @@ export enum States {
 export enum Errors {
     FindingJobs = 'FINDING_JOBS_ERROR',
     NoMoreJobs = 'NO_MORE_JOBS_ERROR',
+}
+
+export enum SlotTypes {
+    Position = "position",
+    Location = "location",
+}
+
+export type SlotValue = {
+    name: string;
+    value: string
+    isMatch: boolean;
+    confirmationStatus: SlotConfirmationStatus;
+}
+
+export type SlotValues = {
+    [key: string]: SlotValue | undefined;
+
 }
