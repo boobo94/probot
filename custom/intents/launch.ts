@@ -13,7 +13,6 @@ export const LaunchRequestHandler: Alexa.RequestHandler = {
         return handlerInput.responseBuilder
             .speak(speechText)
             .reprompt(speechText)
-            .withSimpleCard(t('SKILL_NAME'), speechText)
             .getResponse();
     }
 };

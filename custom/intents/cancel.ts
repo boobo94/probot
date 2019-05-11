@@ -12,7 +12,6 @@ export const CancelAndStopIntentHandler: RequestHandler = {
 
         return handlerInput.responseBuilder
             .speak(speechText)
-            .withSimpleCard(t('SKILL_NAME'), speechText)
             .withShouldEndSession(true)
             .getResponse();
     }
