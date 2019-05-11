@@ -38,7 +38,19 @@ const search = async (description: string, location: string): Promise<JobType[]>
 
 }
 
-export default {
+const getJob = async (jobId: string): Promise<JobType> => {
+    try {
+        const response = await instance.get(`/positions/${jobId}.json`);
+
+        return response.data;
+    }
+    catch (err) {
+        throw err;
+    }
+}
+
+export const jobsControllerAPI = {
     instance,
     search,
+    getJob,
 }
