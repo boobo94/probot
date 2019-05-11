@@ -33,6 +33,7 @@ export const handler = SkillBuilders.custom()
     )
     .addErrorHandlers(
         Errors.ErrorFindingJobs,
+        Errors.ErrorNoMoreJobs,
         Errors.Unknown,
     )
     .addRequestInterceptors(

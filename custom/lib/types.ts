@@ -22,4 +22,5 @@ export enum States {
 
 export enum Errors {
     FindingJobs = 'FINDING_JOBS_ERROR',
+    NoMoreJobs = 'NO_MORE_JOBS_ERROR',
 }
