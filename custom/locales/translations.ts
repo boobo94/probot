@@ -1,7 +1,7 @@
 export const locales = {
     'en-US': {
         translation: {
-            "SKILL_NAME": "Hello world",
+            "SKILL_NAME": "Probot",
             "WELCOME_MSG": "Welcome to the Probot. You can start the test, check your personality results or find a job.",
             "GOODBYE_MSG": "Goodbye!",
             "HELLO_MSG": "If you want to start the test, simply ask `start the test`. In any moment yout can check your personality.",
@@ -33,16 +33,18 @@ export const locales = {
 
             // job search
             "SEARCH_JOBS_QUESTION": "Do you want to search for jobs?",
-            "JOB_DESCRIPTION": "I found a position as %s at %s having the following description: %s.",
+            "JOB_DESCRIPTION": "I found a position as %s, at %s, in %s, having the following description: %s.",
             "INTERESTED_JOB": "Are you interested?",
-            "MARK_JOB_AS_SENT": "Your job offer was sent.",
+            "MARK_JOB_AS_SENT": "Your job offer was sent. ",
+            "COMPANY": "Company",
+            "LOCATION": "Location",
+            "URL": "URL",
 
             // errors
             "ERROR_FINDING_JOBS": "Sorry but I couldn't connect to find a job, please try again.",
             "ERROR_NO_MORE_JOBS": "Sorry but I don't have any new job. You can search again.",
             "ERROR_MSG": "Sorry, I can't understand the command. Please say again.",
             "ERROR_UNEXPECTED_MSG": "Sorry, an unexpected error has occured. Please try again later.",
-
 
         }
     },
