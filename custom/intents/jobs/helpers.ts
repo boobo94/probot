@@ -26,6 +26,9 @@ export async function GetJob(handlerInput: HandlerInput): Promise<JobType> {
     // pick up a new job
     const job = jobs[Math.ceil(Math.random() * jobs.length)]
 
+    // remove html tags
+    job.description = job.description.replace(/<\/?[^>]+(>|$)/g, "")
+
     // mark the job as listen to
     sessionAttributes.visitedIDs.push(job.id)
 
