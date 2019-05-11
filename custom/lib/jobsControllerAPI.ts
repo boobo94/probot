@@ -23,7 +23,7 @@ export interface JobType {
 const search = async (description: string, location: string): Promise<JobType[]> => {
 
     try {
-        const response = await instance.get(null, {
+        const response = await instance.get('/positions.json', {
             params: {
                 description,
                 location,

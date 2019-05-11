@@ -18,13 +18,13 @@ function Config(): Config {
                 return {
                     version: "0.11",
                     dynamoDbTableName: "Probot-Alexa-Skill",
-                    jobsBaseURL: 'https://jobs.github.com/positions.json',
+                    jobsBaseURL: 'https://jobs.github.com',
                 };
             default:
                 return {
                     version: "0.11",
                     dynamoDbTableName: "Probot-Alexa-Skill-Dev",
-                    jobsBaseURL: 'https://jobs.github.com/positions.json',
+                    jobsBaseURL: 'https://jobs.github.com',
                 };
         }
     }
