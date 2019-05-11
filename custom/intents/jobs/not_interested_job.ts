@@ -15,7 +15,7 @@ export const NotInterestedJobIntentHandler: RequestHandler = {
         let speechText: string
         try {
             const job = await GetJob(handlerInput)
-            speechText = t('JOB_DESCRIPTION', job.title, job.company, job.description)
+            speechText = t('JOB_DESCRIPTION', job.title, job.company, job.location, job.description)
         } catch (err) {
             throw CreateError(err, Errors.FindingJobs)
         }
@@ -25,7 +25,6 @@ export const NotInterestedJobIntentHandler: RequestHandler = {
         return handlerInput.responseBuilder
             .speak(`${speechText} ${question}`)
             .reprompt(question)
-            .withSimpleCard(t('SKILL_NAME'), speechText)
             .getResponse();
     }
 };
