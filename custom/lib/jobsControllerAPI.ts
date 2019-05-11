@@ -17,7 +17,7 @@ export interface JobType {
     title: string;
     description: string;
     how_to_apply: string;
-    company_loho: string;
+    company_logo: string;
 }
 
 const search = async (description: string, location: string): Promise<JobType[]> => {
