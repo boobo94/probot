@@ -34,9 +34,9 @@ export const handler = SkillBuilders.custom()
         Intents.NotInterestedJobIntentHandler,
     )
     .addErrorHandlers(
-        Errors.Unknown,
         Errors.ErrorFindingJobs,
         Errors.ErrorNoMoreJobs,
+        Errors.Unknown,
     )
     .addRequestInterceptors(
         Interceptors.LoadPersistentAttributes,
