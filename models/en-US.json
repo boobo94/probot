@@ -39,11 +39,10 @@
             "search a job as {position} in {location}",
             "want a job in {location} as {position}",
             "want a position as {position} in {location}",
+            "want for a position as {position} in {location}",
             "want to be {position}",
             "want a {position} job",
             "look for a job in {location}",
-            "{location}",
-            "{position}",
             "search a {position} job in {location}"
           ]
         },
@@ -51,6 +50,7 @@
           "name": "personalityTestIntent",
           "slots": [],
           "samples": [
+            "start the test",
             "test"
           ]
         },
@@ -60,7 +60,9 @@
         },
         {
           "name": "AMAZON.NoIntent",
-          "samples": []
+          "samples": [
+            "nowe"
+          ]
         },
         {
           "name": "checkMyPersonalityIntent",
@@ -81,5 +83,5 @@
       "types": []
     }
   },
-  "version": "11"
+  "version": "16"
 }
