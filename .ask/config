@@ -32,7 +32,7 @@
             "codeUri": "dist",
             "functionName": "probot-dev",
             "handler": "index.handler",
-            "revisionId": "dffa1f3a-d523-41ce-8af4-476fc6363774",
+            "revisionId": "e42b9d61-22a7-4999-87b3-b4b6fa655e9c",
             "runtime": "nodejs8.10"
           }
         ],

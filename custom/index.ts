@@ -14,6 +14,7 @@ export const handler = SkillBuilders.custom()
         Intents.HelpIntentHandler,
         Intents.CancelAndStopIntentHandler,
         Intents.SessionEnded,
+        Intents.Fallback,
 
         // custom intents
 
