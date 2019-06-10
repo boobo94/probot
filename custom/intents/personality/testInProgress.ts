@@ -53,9 +53,9 @@ export const DenyStatementHandler: RequestHandler = {
             return FinishTestHandler.handle(handlerInput)
         }
 
-        const currentStatement = currentTest[attributes.test.statementId]
+        const nextStatement = currentTest[attributes.test.statementId]
 
-        const speechText = currentStatement.Statement
+        const speechText = nextStatement.Statement
         return handlerInput.responseBuilder
             .speak(speechText)
             .reprompt(speechText)
