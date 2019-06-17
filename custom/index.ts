@@ -19,12 +19,12 @@ export const handler = SkillBuilders.custom()
         // custom intents
 
         // personality
+        PersonalityIntents.PersonalityIntentHandler,
         PersonalityIntents.ValidateStatementHandler,
         PersonalityIntents.DenyStatementHandler,
         PersonalityIntents.RepeatQuestionIntentHandler,
 
         // check personality
-        CheckPersonalityIntents.PersonalityIntentHandler,
         CheckPersonalityIntents.CheckMyPersonalityIntentHandler,
         CheckPersonalityIntents.AllowStartTestIntentHandler,
         CheckPersonalityIntents.DenyStartTestIntentHandler,

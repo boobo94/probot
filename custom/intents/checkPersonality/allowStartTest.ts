@@ -1,7 +1,7 @@
 import { IsIntent, GetSessionAttributes } from '../../lib/helpers';
 import { IntentTypes, States } from "../../lib/types";
 import { RequestHandler } from 'ask-sdk';
-import { PersonalityIntentHandler } from './personalityTest';
+import { PersonalityIntentHandler } from '../personality/personalityTest';
 
 export const AllowStartTestIntentHandler: RequestHandler = {
     canHandle(handlerInput) {
