@@ -3,365 +3,365 @@ import { StatementStructure, PersonalityType } from './interface';
 const tests: Array<StatementStructure[]> = [
     [
         {
-            Statement: "I like to work on cars",
+            Statement: "Do you like to work on cars?",
             Type: PersonalityType.R
         },
         {
-            Statement: "I like to do puzzles",
+            Statement: "Do you like to do puzzles?",
             Type: PersonalityType.I
         },
         {
-            Statement: "I am good at working independently",
+            Statement: "Are you good at working independently?",
             Type: PersonalityType.A
         },
         {
-            Statement: "I like to work in teams",
+            Statement: "Do you like to work in teams?",
             Type: PersonalityType.S
         },
         {
-            Statement: "I am an ambitious person, I set goals for myself",
+            Statement: "Are you an ambitious person, do you set goals for yourself?",
             Type: PersonalityType.E
         },
         {
-            Statement: "I like to organize things,  (files, desks/offices)",
+            Statement: "Do you like to organize things,  (files, desks/offices)",
             Type: PersonalityType.C
         },
         {
-            Statement: "I like to build things",
+            Statement: "Do you like to build things?",
             Type: PersonalityType.R,
         },
         {
-            Statement: "I like to read about art and music",
+            Statement: "Do you like to read about art and music?",
             Type: PersonalityType.A
         },
         {
-            Statement: "I like to have clear instructions  to follow",
+            Statement: "Do you like to have clear instructions to follow?",
             Type: PersonalityType.C
         },
         {
-            Statement: "I like to try to influence or persuade people",
+            Statement: "Do you like to try to influence or persuade people?",
             Type: PersonalityType.E
         },
         {
-            Statement: "I like to do experiments",
+            Statement: "Do you like to do experiments?",
             Type: PersonalityType.I
         },
         {
-            Statement: "I like to teach or train people",
+            Statement: "Do you like to teach or train people?",
             Type: PersonalityType.S
         },
         {
-            Statement: "I like trying to help people solve their problems",
+            Statement: "Do you like trying to help people solve their problems?",
             Type: PersonalityType.S
         },
         {
-            Statement: "I like to take care of animals",
+            Statement: "Do you like to take care of animals?",
             Type: PersonalityType.R
         },
         {
-            Statement: "I wouldn’t mind working 8 hours per day in an office",
+            Statement: "You wouldn’t mind working 8 hours per day in an office?",
             Type: PersonalityType.C
         },
         {
-            Statement: "I like selling things",
+            Statement: "Do you like selling things?",
             Type: PersonalityType.E
         },
         {
-            Statement: "I enjoy creative writing",
+            Statement: "Do you enjoy creative writing?",
             Type: PersonalityType.A
         },
         {
-            Statement: "I enjoy science",
+            Statement: "Do you enjoy science?",
             Type: PersonalityType.I
         },
         {
-            Statement: "I am quick to take on new responsibilities",
+            Statement: "Are you quick to take on new responsibilities?",
             Type: PersonalityType.E
         },
         {
-            Statement: "I am interested in healing people",
+            Statement: "Are you interested in healing people?",
             Type: PersonalityType.S
         },
         {
-            Statement: "I enjoy trying to figure out how things work",
+            Statement: "Do you enjoy trying to figure out how things work?",
             Type: PersonalityType.I
         },
         {
-            Statement: "I like putting things together or assembling things",
+            Statement: "Do you like putting things together or assembling things?",
             Type: PersonalityType.R
         },
         {
-            Statement: "I am a creative person",
+            Statement: "Are you a creative person?",
             Type: PersonalityType.A
         },
         {
-            Statement: "I pay attention to details",
+            Statement: "Do you pay attention to details?",
             Type: PersonalityType.C
         },
         {
-            Statement: "I like to do filing or typing",
+            Statement: "Do you like to do filing or typing?",
             Type: PersonalityType.C
         },
         {
-            Statement: "I like to analyze things (problems/situations)",
+            Statement: "Do you like to analyze things (problems/situations)?",
             Type: PersonalityType.I
         },
         {
-            Statement: "I like to play instruments or sing",
+            Statement: "Do you like to play instruments or sing?",
             Type: PersonalityType.A
         },
         {
-            Statement: "I enjoy learning about other cultures",
+            Statement: "Do you enjoy learning about other cultures?",
             Type: PersonalityType.S
         },
         {
-            Statement: "I would like to start my own business",
+            Statement: "Do you like to start my own business?",
             Type: PersonalityType.E
         },
         {
-            Statement: "I like to cook",
+            Statement: "Do you like to cook?",
             Type: PersonalityType.R
         },
         {
-            Statement: "I like acting in plays",
+            Statement: "Do you like acting in plays?",
             Type: PersonalityType.A
         },
         {
-            Statement: "I am a practical person",
+            Statement: "Are you a practical person?",
             Type: PersonalityType.R
         },
         {
-            Statement: "I like working with numbers  or charts",
+            Statement: "Do you like working with numbers or charts?",
             Type: PersonalityType.I
         },
         {
-            Statement: "I like to get into discussions about issues",
+            Statement: "Do you like to get into discussions about issues?",
             Type: PersonalityType.S
         },
         {
-            Statement: "I am good at keeping records of my work",
+            Statement: "Are you good at keeping records of my work?",
             Type: PersonalityType.C
         },
         {
-            Statement: "I like to lead",
+            Statement: "Do you like to lead?",
             Type: PersonalityType.E
         },
         {
-            Statement: "I like working outdoors",
+            Statement: "Do you like working outdoors?",
             Type: PersonalityType.R
         },
         {
-            Statement: "I would like to work in an office",
+            Statement: "Would you like to work in an office?",
             Type: PersonalityType.C
         },
         {
-            Statement: "I’m good at math",
+            Statement: "Are you good at math?",
             Type: PersonalityType.I
         },
         {
-            Statement: "I like helping people",
+            Statement: "Do you like helping people?",
             Type: PersonalityType.S
         },
         {
-            Statement: "I like to draw",
+            Statement: "Do you like to draw?",
             Type: PersonalityType.A
         },
         {
-            Statement: "I like to give speeches",
+            Statement: "Do you like to give speeches?",
             Type: PersonalityType.E
         }
     ],
     [
         {
-            Statement: "I like Farming",
+            Statement: "Do you like farming?",
             Type: PersonalityType.R
         },
         {
-            Statement: "I like Advanced math",
+            Statement: "Do you like advanced math?",
             Type: PersonalityType.I
         },
         {
-            Statement: "I like to be in a play",
+            Statement: "Do you like to be in a play?",
             Type: PersonalityType.A
         },
         {
-            Statement: "I like to study people in other lands",
+            Statement: "Do you like to study people in other lands?",
             Type: PersonalityType.S
         },
         {
-            Statement: "I like to talk to people at a party",
+            Statement: "Do you like to talk to people at a party?",
             Type: PersonalityType.E
         },
         {
-            Statement: "I like Word processing",
+            Statement: "Do you like word processing?",
             Type: PersonalityType.C
         },
         {
-            Statement: "I like Auto mechanics",
+            Statement: "Do you like auto mechanics?",
             Type: PersonalityType.R
         },
         {
-            Statement: "I like Astronomy",
+            Statement: "Do you like astronomy?",
             Type: PersonalityType.I
         },
         {
-            Statement: "I like Draw or paint",
+            Statement: "Do you like to draw or paint?",
             Type: PersonalityType.A
         },
         {
-            Statement: "I like to go at church",
+            Statement: "Do you like to go at church?",
             Type: PersonalityType.S
         },
         {
-            Statement: "I like to Work on a sales campaign",
+            Statement: "Do you like to work on a sales campaign?",
             Type: PersonalityType.E
         },
         {
-            Statement: "I like to Use a cash register",
+            Statement: "Do you like to use a cash register?",
             Type: PersonalityType.C
         },
         {
-            Statement: "I like Carpentry",
+            Statement: "Do you like carpentry?",
             Type: PersonalityType.R
         },
         {
-            Statement: "I like Physics",
+            Statement: "Do you like physics?",
             Type: PersonalityType.I
         },
         {
-            Statement: "I like Foreign languages",
+            Statement: "Do you like foreign languages?",
             Type: PersonalityType.A
         },
         {
-            Statement: "I like Teaching children",
+            Statement: "Do you like teaching children?",
             Type: PersonalityType.S
         },
         {
-            Statement: "I like to Buy clothes for a store",
+            Statement: "Do you like to buy clothes for a store?",
             Type: PersonalityType.E
         },
         {
-            Statement: "I like to work from nine to five",
+            Statement: "Do you like to work from nine to five?",
             Type: PersonalityType.C
         },
         {
-            Statement: "I like Setting type for a printing job",
+            Statement: "Do you like setting type for a printing job?",
             Type: PersonalityType.R
         },
         {
-            Statement: "I like to use a chemistry set",
+            Statement: "Do you like to use a chemistry set?",
             Type: PersonalityType.I
         },
         {
-            Statement: "I like to read art and music magazines",
+            Statement: "Do you like to read art and music magazines?",
             Type: PersonalityType.A
         },
         {
-            Statement: "I like to help people solve personal problems",
+            Statement: "Do you like to help people solve personal problems?",
             Type: PersonalityType.S
         },
         {
-            Statement: "I like to sell life insurance",
+            Statement: "Do you like to sell life insurance?",
             Type: PersonalityType.E
         },
         {
-            Statement: "I like to Type reports",
+            Statement: "Do you like to type reports?",
             Type: PersonalityType.C
         },
         {
-            Statement: "I like to drive a truck",
+            Statement: "Do you like to drive a truck?",
             Type: PersonalityType.R
         },
         {
-            Statement: "I like to work in a lab",
+            Statement: "Do you like to work in a lab?",
             Type: PersonalityType.I
         },
         {
-            Statement: "I like Musicians",
+            Statement: "Do you like musicians?",
             Type: PersonalityType.A
         },
         {
-            Statement: "I like to make new friends",
+            Statement: "Do you like to make new friends?",
             Type: PersonalityType.S
         },
         {
-            Statement: "I like Leaders",
+            Statement: "Do you like leaders?",
             Type: PersonalityType.E
         },
         {
-            Statement: "I like to follow a budget",
+            Statement: "Do you like to follow a budget?",
             Type: PersonalityType.C
         },
         {
-            Statement: "I like to fix electrical appliances",
+            Statement: "Do you like to fix electrical appliances?",
             Type: PersonalityType.R
         },
         {
-            Statement: "I like to Build rocket model",
+            Statement: "Do you like to Build rocket model?",
             Type: PersonalityType.I
         },
         {
-            Statement: "I like Creative writing",
+            Statement: "Do you like creative writing?",
             Type: PersonalityType.A
         },
         {
-            Statement: "I like to attend at sports events",
+            Statement: "Do you like to attend at sports events?",
             Type: PersonalityType.S
         },
         {
-            Statement: "I like to be elected class president",
+            Statement: "Do you like to be elected class president?",
             Type: PersonalityType.E
         },
         {
-            Statement: "I like to use business machines",
+            Statement: "Do you like to use business machines?",
             Type: PersonalityType.C
         },
         {
-            Statement: "I like to build things",
+            Statement: "Do you like to build things?",
             Type: PersonalityType.R
         },
         {
-            Statement: "I like to do puzzles",
+            Statement: "Do you like to do puzzles?",
             Type: PersonalityType.I
         },
         {
-            Statement: "I like Fashion design",
+            Statement: "Do you like Fashion design?",
             Type: PersonalityType.A
         },
         {
-            Statement: "I like to belong to a club",
+            Statement: "Do you like to belong to a club?",
             Type: PersonalityType.S
         },
         {
-            Statement: "I like to give speeches",
+            Statement: "Do like to give speeches?",
             Type: PersonalityType.E
         },
         {
-            Statement: "I like to keep detailed records",
+            Statement: "Do you like to keep detailed records?",
             Type: PersonalityType.C
         },
         {
-            Statement: "I like Wildlife biology",
+            Statement: "Do you like wildlife biology?",
             Type: PersonalityType.R
         },
         {
-            Statement: "I like to be in a science fair",
+            Statement: "Do you like to be in a science fair?",
             Type: PersonalityType.I
         },
         {
-            Statement: "I like to go to concerts",
+            Statement: "Do you like to go to concerts?",
             Type: PersonalityType.A
         },
         {
-            Statement: "I like to work with old people",
+            Statement: "Do you like to work with old people?",
             Type: PersonalityType.S
         },
         {
-            Statement: "I like Sales people",
+            Statement: "Do you like sales people?",
             Type: PersonalityType.E
         },
         {
-            Statement: "I like File letters and reports",
+            Statement: "Do you like file letters and reports?",
             Type: PersonalityType.C
         },
     ],
