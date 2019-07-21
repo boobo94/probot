@@ -146,10 +146,10 @@ export const getPersonalityScore = (arr: Array<PersonalityTestResult>, t: any): 
                 break;
         }
         personality += value.personality
-        scoreResponse += ` : ${value.total}`
+        scoreResponse += `: ${value.total}`
     })
 
-    return `${personality}, ${scoreResponse}`
+    return `${personality}. ${scoreResponse}`
 }
 
 export const getMyPersonalitiesDescription = (arr: Array<PersonalityTestResult>, t: any): string => {
@@ -158,22 +158,22 @@ export const getMyPersonalitiesDescription = (arr: Array<PersonalityTestResult>,
     arr.forEach((value) => {
         switch (value.personality) {
             case PersonalityType.R:
-                response += `${t('REALISTIC_TITLE')}: ${t('REALISTIC_MSG')}`
+                response += `${t('REALISTIC_MSG')}`;
                 break;
             case PersonalityType.I:
-                response += `${t('INVESTIGATIVE_TITLE')}: ${t('INVESTIGATIVE_MSG')}`
+                response += `${t('INVESTIGATIVE_MSG')}`;
                 break;
             case PersonalityType.A:
-                response += `${t('ARTISTIC_TITLE')}: ${t('ARTISTIC_MSG')}`
+                response += `${t('ARTISTIC_MSG')}`;
                 break;
             case PersonalityType.S:
-                response += `${t('SOCIAL_TITLE')}: ${t('SOCIAL_MSG')}`
+                response += `${t('SOCIAL_MSG')}`;
                 break;
             case PersonalityType.E:
-                response += `${t('ENTERPRISING_TITLE')}: ${t('ENTERPRISING_MSG')}`
+                response += `${t('ENTERPRISING_MSG')}`;
                 break;
             case PersonalityType.C:
-                response += `${t('CONVENTIONAL_TITLE')}: ${t('CONVENTIONAL_MSG')}`
+                response += `${t('CONVENTIONAL_MSG')}`;
                 break;
         }
     })
