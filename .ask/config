@@ -29,10 +29,9 @@
             ],
             "arn": "arn:aws:lambda:eu-west-1:301023501224:function:probot-dev",
             "awsRegion": "eu-west-1",
-            "codeUri": "dist",
             "functionName": "probot-dev",
             "handler": "index.handler",
-            "revisionId": "d5da4403-8b7f-4809-ade1-e78b1e31b516",
+            "revisionId": "7b85909d-13a5-4720-8867-9ebed57c88c1",
             "runtime": "nodejs8.10"
           }
         ],
@@ -75,7 +74,6 @@
             ],
             "arn": "arn:aws:lambda:eu-west-1:659122063481:function:probot-prod",
             "awsRegion": "eu-west-1",
-            "codeUri": "dist",
             "functionName": "probot-prod",
             "handler": "index.handler",
             "runtime": "nodejs8.10"

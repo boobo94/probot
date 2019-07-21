@@ -799,5 +799,34 @@ const tests: Array<StatementStructure[]> = [
         },
     ],
 ]
+
+// const tests: Array<StatementStructure[]> = [
+
+//     // this is only for demo
+//     [
+//         {
+//             Statement: "Do you like to work on cars?",
+//             Type: PersonalityType.R
+//         },
+//         {
+//             Statement: "Do you like to do puzzles?",
+//             Type: PersonalityType.I
+//         },
+//         {
+//             Statement: "Are you good at working independently?",
+//             Type: PersonalityType.A
+//         },
+//         {
+//             Statement: "Do you like to work in teams?",
+//             Type: PersonalityType.S
+//         },
+//         {
+//             Statement: "Are you an ambitious person, do you set goals for yourself?",
+//             Type: PersonalityType.E
+//         },
+//     ]
+// ]
+
+
 export default tests
 

@@ -3,7 +3,7 @@
     "apis": {
       "custom": {
         "endpoint": {
-          "sourceDir": "dist"
+          "sourceDir": "dist/custom"
         },
         "interfaces": []
       }
