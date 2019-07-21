@@ -403,7 +403,7 @@ const tests: Array<StatementStructure[]> = [
             Type: PersonalityType.R
         },
         {
-            Statement: "Can you play a sport?",?
+            Statement: "Can you play a sport?",
             Type: PersonalityType.R
         },
         {
