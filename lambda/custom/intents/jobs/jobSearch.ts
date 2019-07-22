@@ -11,16 +11,16 @@ export const JobSearchIntentHandler: RequestHandler = {
         const { t } = GetRequestAttributes(handlerInput)
         let speechText: string
 
+        let sessionAttributes = GetSessionAttributes(handlerInput)
+        sessionAttributes.state = States.JobSearch
+        sessionAttributes.visitedIDs = []
+
+        // get the position and location
+        const slots = GetSlotValues(handlerInput)
+        sessionAttributes.position = slots[SlotTypes.Position].value;
+        sessionAttributes.location = slots[SlotTypes.Location].value;
+
         try {
-            let sessionAttributes = GetSessionAttributes(handlerInput)
-            sessionAttributes.state = States.JobSearch
-            sessionAttributes.visitedIDs = []
-
-            // get the position and location
-            const slots = GetSlotValues(handlerInput)
-            sessionAttributes.position = slots[SlotTypes.Position].value;
-            sessionAttributes.location = slots[SlotTypes.Location].value;
-
             // pick up a new job
             const job = await GetJob(handlerInput)
             speechText = t('JOB_DESCRIPTION', job.title, job.company, job.location, job.description)
