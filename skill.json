@@ -9,12 +9,38 @@
       }
     },
     "manifestVersion": "1.0",
+    "privacyAndCompliance": {
+      "locales": {
+        "en-US": {}
+      },
+      "allowsPurchases": false,
+      "usesPersonalInfo": false,
+      "isChildDirected": false,
+      "isExportCompliant": true,
+      "containsAds": false
+    },
     "publishingInformation": {
       "locales": {
         "en-US": {
-          "name": "probot"
+          "name": "Probot",
+          "examplePhrases": [
+            "Alexa, ask Probot.",
+            "I want to start a new test.",
+            "Check my results."
+          ],
+          "keywords": [
+            "RIASEC",
+            "Holland",
+            "Code",
+            "personality",
+            "profile",
+            "job"
+          ]
         }
-      }
+      },
+      "isAvailableWorldwide": true,
+      "category": "SELF_IMPROVEMENT",
+      "distributionCountries": []
     }
   }
 }
