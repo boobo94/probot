@@ -10,7 +10,7 @@ export const Fallback: RequestHandler = {
         const { t } = GetRequestAttributes(handlerInput);
 
         const speechText = t('ERROR_UNEXPECTED_MSG');
-        const repromtText = t('HELLO_MSG')
+        const repromtText = t('ERROR_UNEXPECTED_MSG')
 
         return handlerInput.responseBuilder
             .speak(speechText)
