@@ -79,8 +79,14 @@
             "runtime": "nodejs8.10"
           }
         ],
-        "manifest": {},
-        "interactionModel": {}
+        "manifest": {
+          "eTag": "985a030379946669b1f3744a196ed163"
+        },
+        "interactionModel": {
+          "en-US": {
+            "eTag": "b274d6fcabac56648ae9240dc3e8f4b6"
+          }
+        }
       }
     }
   }

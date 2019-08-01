@@ -17,10 +17,10 @@
     "deploy:models:dev": "npm run models:dev && ask deploy -t model --profile=boobo94_dev --force",
     "deploy:skill:dev": "ask deploy -t skill --profile=boobo94_dev --force",
     "deploy:lambda:dev": "npm run build && ask deploy --target lambda --profile=boobo94_dev --force",
-    "get:model:en:prod": "ask api get-model -s <SKILL_ID> -l en-US > models/en-US.json --profile=boobo94_prod",
+    "get:model:en:prod": "ask api get-model -s amzn1.ask.skill.51bd9c47-3bfd-4ab1-a1b5-ddfa24230423 -l en-US > models/en-US.json --profile=boobo94_prod",
     "get:models:prod": "npm run get:model:en:prod",
-    "get:skill:prod": "ask api get-skill --skill-id <SKILL_ID> > skill.json --profile=boobo94_prod",
     "deploy:models:prod": "npm run models:prod && ask deploy -t model --profile=boobo94_prod --force",
+    "get:skill:prod": "ask api get-skill --skill-id amzn1.ask.skill.51bd9c47-3bfd-4ab1-a1b5-ddfa24230423 > skill.json --profile=boobo94_prod",
     "deploy:skill:prod": "ask deploy -t skill --profile=boobo94_prod --force",
     "deploy:lambda:prod": "npm run build && ask deploy --target lambda --profile=boobo94_prod --force"
   },
