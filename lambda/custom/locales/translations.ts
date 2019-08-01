@@ -31,18 +31,7 @@ export const locales = {
             "ENTERPRISING_MSG": "<break strength=\"strong\"/> Enterprising people like to work with others and enjoy persuading and performing. Good college majors for Enterprising people are: Fashion Merchandising, Real Estate, Marketing or Sales, Law, Political Science, International Trade, Banking or Finance. ",
             "CONVENTIONAL_MSG": "<break strength=\"strong\"/> Conventional people are very detail oriented,organized  and like to work with data. Good college majors for Conventional people are: Accounting, Court Reporting, Insurance, Administration, Medical Records, Banking, Data Processing. ",
 
-            // job search
-            "SEARCH_JOBS_QUESTION": "Do you want to search for jobs?",
-            "JOB_DESCRIPTION": "I found a position as %s, at %s, in %s, having the following description: %s.",
-            "INTERESTED_JOB": "Are you interested?",
-            "MARK_JOB_AS_SENT": "Your job offer was sent. ",
-            "COMPANY": "Company",
-            "LOCATION": "Location",
-            "URL": "URL",
-
             // errors
-            "ERROR_FINDING_JOBS": "Sorry but I cannot find that job, please try again.",
-            "ERROR_NO_MORE_JOBS": "Sorry but I don't have any jobs. Please search with a different query.",
             "ERROR_MSG": "Huston, we have a problem. Please repeat!",
             "ERROR_UNEXPECTED_MSG": "I lost a transistor, so I don't know this one. How can I help you?",
 

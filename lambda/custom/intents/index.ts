@@ -4,5 +4,4 @@ export * from './cancel'
 export * from './sessionEnd'
 export * from './fallback'
 
-export * from './jobs'
 export * from './personality'

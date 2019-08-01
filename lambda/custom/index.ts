@@ -29,14 +29,8 @@ export const handler = SkillBuilders.custom()
         CheckPersonalityIntents.AllowStartTestIntentHandler,
         CheckPersonalityIntents.DenyStartTestIntentHandler,
 
-        // job search
-        Intents.JobSearchIntentHandler,
-        Intents.InterestedJobIntentHandler,
-        Intents.NotInterestedJobIntentHandler,
     )
     .addErrorHandlers(
-        Errors.ErrorFindingJobs,
-        Errors.ErrorNoMoreJobs,
         Errors.Unknown,
     )
     .addRequestInterceptors(
