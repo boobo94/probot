@@ -31,7 +31,7 @@
             "awsRegion": "eu-west-1",
             "functionName": "probot-dev",
             "handler": "index.handler",
-            "revisionId": "cee3a18e-3a98-4993-872f-474b06554be1",
+            "revisionId": "e639d37c-54e5-4fb3-9e03-57dc66b16310",
             "runtime": "nodejs8.10"
           }
         ],
@@ -76,7 +76,8 @@
             "awsRegion": "eu-west-1",
             "functionName": "probot-prod",
             "handler": "index.handler",
-            "runtime": "nodejs8.10"
+            "runtime": "nodejs8.10",
+            "revisionId": "7e27b11b-f689-425c-bc6b-e6ebbf66058a"
           }
         ],
         "manifest": {
