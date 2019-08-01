@@ -2,7 +2,7 @@ export const locales = {
     'en-US': {
         translation: {
             "SKILL_NAME": "Probot",
-            "WELCOME_MSG": "Welcome to Probot. You can start a professional test, check your personality results or find a job. What are you interested for?",
+            "WELCOME_MSG": "Welcome to Probot. You can start a professional test or check your personality results. What are you interested for?",
             "GOODBYE_MSG": "Goodbye!",
             "HELLO_MSG": "If you want to start the test, simply ask `start the test`. In any moment yout can check your personality.",
             "HELP_MSG": "You can say hello to me!",
@@ -10,10 +10,10 @@ export const locales = {
             // test intent
             "START_TEST_QUESTION": "Do you want to start the test?",
             "TEST_STARTED": "The test started. For the next questions tell me if you agree or not.",
-            "TEST_ENDED": "The test ended. Your personality is %s. %s Thank you for your time! You can start the test or check your results. What do you want next?",
+            "TEST_ENDED": "The test ended. Your personality is %s. %s Thank you for your time! You can start a new test or check your results. What do you want next?",
 
             // check my personality
-            "CHECK_PERSONALITY": "Your personality is %s. %s You can start a new test or find a job. What do you want next?",
+            "CHECK_PERSONALITY": "Your personality is %s. %s You can start a new test. What do you want next?",
             "PERSONALITY_UNAVAILABLE": "Sorry I couldn't find any results. Do you want to start a new test?",
 
             // personalities
