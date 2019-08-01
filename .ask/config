@@ -15,7 +15,7 @@
           "publishingInformation": {
             "locales": {
               "en-US": {
-                "name": "Probot"
+                "name": "Probot Development"
               }
             }
           }
@@ -31,29 +31,29 @@
             "awsRegion": "eu-west-1",
             "functionName": "probot-dev",
             "handler": "index.handler",
-            "revisionId": "907262e7-b9ce-49fd-886c-6d6bec29edfa",
+            "revisionId": "cee3a18e-3a98-4993-872f-474b06554be1",
             "runtime": "nodejs8.10"
           }
         ],
         "manifest": {
-          "eTag": "3f21b96e7202a698f6c71083c1c635c3"
+          "eTag": "b84e7aa36641277033a477d525b919c8"
         },
         "interactionModel": {
           "en-US": {
-            "eTag": "dbbe06f592c02169462edfa02dfa2193"
+            "eTag": "fda521a56865728baed0f48fb8ba7969"
           }
         }
       }
     },
     "boobo94_prod": {
-      "skill_id": "amzn1.ask.skill.101a1203-e374-4dc0-8a28-67742a4847df",
+      "skill_id": "amzn1.ask.skill.51bd9c47-3bfd-4ab1-a1b5-ddfa24230423",
       "was_cloned": false,
       "merge": {
         "manifest": {
           "apis": {
             "custom": {
               "endpoint": {
-                "uri": "arn:aws:lambda:eu-west-1:659122063481:function:probot-prod"
+                "uri": "arn:aws:lambda:eu-west-1:301023501224:function:probot-prod"
               }
             }
           },
@@ -72,7 +72,7 @@
             "alexaUsage": [
               "custom/default"
             ],
-            "arn": "arn:aws:lambda:eu-west-1:659122063481:function:probot-prod",
+            "arn": "arn:aws:lambda:eu-west-1:301023501224:function:probot-prod",
             "awsRegion": "eu-west-1",
             "functionName": "probot-prod",
             "handler": "index.handler",
