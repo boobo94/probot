@@ -59,7 +59,7 @@ gulp.task("models", function (done) {
 
     const invocations = {
         [Environments.Dev]: {
-            [Locales.enUS]: "probot dev",
+            [Locales.enUS]: "probot development",
         },
         [Environments.Prod]: {
             [Locales.enUS]: "probot",
