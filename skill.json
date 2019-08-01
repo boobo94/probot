@@ -3,7 +3,7 @@
     "apis": {
       "custom": {
         "endpoint": {
-          "sourceDir": "dist/custom"
+          "uri": "arn:aws:lambda:eu-west-1:301023501224:function:probot-dev"
         },
         "interfaces": []
       }
@@ -11,7 +11,10 @@
     "manifestVersion": "1.0",
     "privacyAndCompliance": {
       "locales": {
-        "en-US": {}
+        "en-US": {
+          "privacyPolicyUrl": "https://boobo94.xyz/terms-and-conditions-alexa-skills-probot/",
+          "termsOfUseUrl": "https://boobo94.xyz/terms-and-conditions-alexa-skills-probot/"
+        }
       },
       "allowsPurchases": false,
       "usesPersonalInfo": false,
@@ -23,6 +26,8 @@
       "locales": {
         "en-US": {
           "name": "Probot",
+          "summary": "Probot helps you to determine your professional typology. It focuses on career and vocational choice, suggesting ideal professions for you.",
+          "description": "Probot helps you to determine your professional typology. It focuses on career and vocational choice, suggesting ideal professions for you. The project is based on RIASEC technique which groups people on the basis of their suitability for six different categories of occupations.\n\nYou'll receive a test with multiple questions where the answers are simply yes or no. In any moment, you have the possibility to ask Probot to repeat the question for you. When the test ends, the results for your typology and a short description will be received, together with suggestions of professions suitable for your profile.\n\nYour results will be stored, making them available for you in any moment.\n\nThis skill is provided for educational and entertainment use only.\nWe don't track your results in any way, them are stored only for you.",
           "examplePhrases": [
             "Alexa, ask Probot.",
             "I want to start a new test.",
@@ -39,6 +44,7 @@
         }
       },
       "isAvailableWorldwide": true,
+      "testingInstructions": "Open the skill by simply `Alexa, ask Probot`\nThe test can be started by `Start the test`. The answers can be affirmative or negative. In any moment you can repeat the question with some variations of `Repeat the question`.\nThe skill offers the possibility to check the results for your test.",
       "category": "SELF_IMPROVEMENT",
       "distributionCountries": []
     }
