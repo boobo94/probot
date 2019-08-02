@@ -59,7 +59,7 @@ gulp.task("models", function (done) {
 
     const invocations = {
         [Environments.Dev]: {
-            [Locales.enUS]: "profession finder dev",
+            [Locales.enUS]: "dev profession finder",
         },
         [Environments.Prod]: {
             [Locales.enUS]: "profession finder",

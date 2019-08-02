@@ -31,16 +31,16 @@
             "awsRegion": "eu-west-1",
             "functionName": "probot-dev",
             "handler": "index.handler",
-            "revisionId": "53ef8c5a-f9a9-49dd-8db9-6987371b02f2",
+            "revisionId": "023d6a74-5ebd-41d0-ab48-5aabe958b891",
             "runtime": "nodejs8.10"
           }
         ],
         "manifest": {
-          "eTag": "783313b44e75620247bdc1a49487bb84"
+          "eTag": "0182b00b308b5f226859fa31d886b309"
         },
         "interactionModel": {
           "en-US": {
-            "eTag": "fda521a56865728baed0f48fb8ba7969"
+            "eTag": "bbb84b181fbe9427148cc57a3993477a"
           }
         }
       }
@@ -77,15 +77,15 @@
             "functionName": "probot-prod",
             "handler": "index.handler",
             "runtime": "nodejs8.10",
-            "revisionId": "1a507728-0d9f-4c1d-84b8-6212f29f9fe1"
+            "revisionId": "65ac5952-7f6a-45de-9d7c-45bb97775f38"
           }
         ],
         "manifest": {
-          "eTag": "985a030379946669b1f3744a196ed163"
+          "eTag": "19ad5fd37725cf1bd68ded273f0d4e12"
         },
         "interactionModel": {
           "en-US": {
-            "eTag": "b274d6fcabac56648ae9240dc3e8f4b6"
+            "eTag": "e7a79199aa6be79bd9c1bb0099d0248a"
           }
         }
       }
