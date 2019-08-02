@@ -1,11 +1,11 @@
 export const locales = {
     'en-US': {
         translation: {
-            "SKILL_NAME": "Probot",
-            "WELCOME_MSG": "Welcome to Probot. You can start a professional test or check your personality results. What are you interested for?",
+            "SKILL_NAME": "Profession Finder",
+            "WELCOME_MSG": "Welcome to Profession Finder. You can start a professional test or check your personality results. What are you interested for?",
             "GOODBYE_MSG": "Goodbye!",
             "HELLO_MSG": "If you want to start the test, simply ask `start the test`. In any moment yout can check your personality.",
-            "HELP_MSG": "You can say hello to me!",
+            "HELP_MSG": "Profession Finder helps you to find your profession. You can start a professional test or check your personality results. What are you interested for?",
 
             // test intent
             "START_TEST_QUESTION": "Do you want to start the test?",

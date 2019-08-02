@@ -15,7 +15,7 @@
           "publishingInformation": {
             "locales": {
               "en-US": {
-                "name": "Probot Development"
+                "name": "Profession Finder Development"
               }
             }
           }
@@ -31,12 +31,12 @@
             "awsRegion": "eu-west-1",
             "functionName": "probot-dev",
             "handler": "index.handler",
-            "revisionId": "e639d37c-54e5-4fb3-9e03-57dc66b16310",
+            "revisionId": "53ef8c5a-f9a9-49dd-8db9-6987371b02f2",
             "runtime": "nodejs8.10"
           }
         ],
         "manifest": {
-          "eTag": "b84e7aa36641277033a477d525b919c8"
+          "eTag": "783313b44e75620247bdc1a49487bb84"
         },
         "interactionModel": {
           "en-US": {
@@ -60,7 +60,7 @@
           "publishingInformation": {
             "locales": {
               "en-US": {
-                "name": "Probot"
+                "name": "Profession Finder"
               }
             }
           }
@@ -77,7 +77,7 @@
             "functionName": "probot-prod",
             "handler": "index.handler",
             "runtime": "nodejs8.10",
-            "revisionId": "7e27b11b-f689-425c-bc6b-e6ebbf66058a"
+            "revisionId": "1a507728-0d9f-4c1d-84b8-6212f29f9fe1"
           }
         ],
         "manifest": {

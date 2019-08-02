@@ -1,7 +1,7 @@
 {
   "interactionModel": {
     "languageModel": {
-      "invocationName": "probot",
+      "invocationName": "Profession Finder",
       "intents": [
         {
           "name": "AMAZON.FallbackIntent",
