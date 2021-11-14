@@ -1,5 +1,16 @@
 [![BCH compliance](https://bettercodehub.com/edge/badge/boobo94/alexa-skill-starter-pack-typescript?branch=master)](https://bettercodehub.com/)
 
+# About the project
+
+Profession Finder helps you to determine your professional typology. It focuses on career and vocational choice, suggesting ideal professions for you. The project is based on RIASEC technique which groups people on the basis of their suitability for six different categories of occupations.
+
+You'll receive a test with multiple questions where the answers are simply yes or no. In any moment, you have the possibility to ask Profession Finder to repeat the question for you. When the test ends, the results for your typology and a short description will be received, together with suggestions of professions suitable for your profile.
+
+Your results will be stored, making them available for you in any moment.
+
+This skill is provided for educational and entertainment use only.
+We don't track your results in any way, them are stored only for you.
+
 # AWS Lambda in TypeScript
 
 ## Install
