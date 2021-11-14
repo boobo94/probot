@@ -11,6 +11,8 @@ Your results will be stored, making them available for you in any moment.
 This skill is provided for educational and entertainment use only.
 We don't track your results in any way, them are stored only for you.
 
+Published [on Amazon Store](https://www.amazon.com/Bogdan-Alexandru-Militaru-Profession-Finder/dp/B07W3YDGVX/ref=mp_s_a_1_1)
+
 # AWS Lambda in TypeScript
 
 ## Install
